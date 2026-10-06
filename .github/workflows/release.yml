@@ -43,12 +43,30 @@ jobs:
           if (-not $license) { throw "找不到 smartmontools 的 GPL 授權檔" }
           Copy-Item $license.FullName bin\COPYING.txt
 
+      - name: Get LibreHardwareMonitorLib
+        shell: pwsh
+        env:
+          LHM_VERSION: v0.9.6
+          LHM_SHA256: 086d9f1b5a99e643edc2cfaaac16051685b551e4c5ac0b32a57c58c0e529c001
+        run: |
+          $zip = "lhm.zip"
+          Invoke-WebRequest "https://github.com/LibreHardwareMonitor/LibreHardwareMonitor/releases/download/$env:LHM_VERSION/LibreHardwareMonitor.zip" -OutFile $zip
+          $hash = (Get-FileHash $zip -Algorithm SHA256).Hash.ToLower()
+          if ($hash -ne $env:LHM_SHA256) { throw "LibreHardwareMonitor.zip 的 SHA256 不符：$hash" }
+          Expand-Archive $zip -DestinationPath lhm-full
+          New-Item -ItemType Directory -Force bin\lhm | Out-Null
+          # 只要函式庫與相依檔，不要 LHM 的介面程式
+          Get-ChildItem lhm-full -Filter *.dll | Where-Object { $_.Name -notmatch '^(Aga\.Controls|OxyPlot|Microsoft\.Win32\.TaskScheduler)' } |
+            Copy-Item -Destination bin\lhm
+          if (-not (Test-Path bin\lhm\LibreHardwareMonitorLib.dll)) { throw "缺少 LibreHardwareMonitorLib.dll" }
+
       - name: Build exe
         shell: pwsh
         run: |
           ./build.ps1
           & dist/PCHealthCheck/_internal/bin/smartctl.exe --version | Select-Object -First 1
           if (-not (Test-Path dist/PCHealthCheck/_internal/bin/COPYING.txt)) { throw "授權檔沒有被打包" }
+          if (-not (Test-Path dist/PCHealthCheck/_internal/bin/lhm/LibreHardwareMonitorLib.dll)) { throw "LHM 沒有被打包" }
 
       - name: Zip
         if: startsWith(github.ref, 'refs/tags/')

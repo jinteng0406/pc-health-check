@@ -35,12 +35,20 @@ $os = Get-CimInstance Win32_OperatingSystem
 $top = @(Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 5 |
     ForEach-Object { [pscustomobject]@{ Name = $_.ProcessName; MB = [int]($_.WorkingSet64 / 1MB) } })
 $scheme = (powercfg /getactivescheme) -join ' '
+$schemeName = if ($scheme -match '\(([^)]+)\)\s*$') { $Matches[1] } else { $null }
+if (-not $schemeName -and $scheme -match '([0-9a-fA-F-]{36})') {
+    # 備援：從登錄檔讀名稱。資源參照格式為「@xxx.dll,-15,Balanced」，最後一段是名稱
+    try {
+        $fn = (Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\$($Matches[1])" -ErrorAction Stop).FriendlyName
+        if ($fn) { $schemeName = if ($fn.StartsWith('@')) { ($fn -split ',')[-1].Trim() } else { $fn } }
+    } catch {}
+}
 [pscustomobject]@{
     Startup       = $startup
     TotalMemoryKB = [int64]$os.TotalVisibleMemorySize
     FreeMemoryKB  = [int64]$os.FreePhysicalMemory
     TopProcesses  = $top
     PowerScheme   = if ($scheme -match '([0-9a-fA-F-]{36})') { $Matches[1].ToLower() } else { $null }
-    PowerSchemeName = if ($scheme -match '\(([^)]+)\)\s*$') { $Matches[1] } else { $null }
+    PowerSchemeName = $schemeName
 } | ConvertTo-Json -Depth 4 -Compress
 """

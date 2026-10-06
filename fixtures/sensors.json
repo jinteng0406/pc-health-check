@@ -1,0 +1,27 @@
+{
+  "Days": 30,
+  "PawnIO": "Running",
+  "Admin": true,
+  "LhmBundled": true,
+  "FirmwareLimit": [
+    {"Time": "2026-10-04T21:13:10", "Data": {"Group": "0", "Number": "0", "CapDurationInSeconds": "184", "PpcChanges": "0", "TpcChanges": "3", "PccChanges": "0"}},
+    {"Time": "2026-10-04T21:13:10", "Data": {"Group": "0", "Number": "1", "CapDurationInSeconds": "184", "PpcChanges": "0", "TpcChanges": "3", "PccChanges": "0"}},
+    {"Time": "2026-10-01T22:40:02", "Data": {"Group": "0", "Number": "0", "CapDurationInSeconds": "95", "PpcChanges": "0", "TpcChanges": "2", "PccChanges": "0"}},
+    {"Time": "2026-09-27T20:05:44", "Data": {"Group": "0", "Number": "0", "CapDurationInSeconds": "61", "PpcChanges": "0", "TpcChanges": "1", "PccChanges": "0"}}
+  ],
+  "Lhm": {
+    "Sensors": [
+      {"Hardware": "12th Gen Intel Core i5-12600KF", "HardwareType": "Cpu", "Name": "CPU Total", "Type": "Load", "Value": 4.2},
+      {"Hardware": "12th Gen Intel Core i5-12600KF", "HardwareType": "Cpu", "Name": "CPU Package", "Type": "Temperature", "Value": 73.0},
+      {"Hardware": "12th Gen Intel Core i5-12600KF", "HardwareType": "Cpu", "Name": "Core Max", "Type": "Temperature", "Value": 73.0},
+      {"Hardware": "12th Gen Intel Core i5-12600KF", "HardwareType": "Cpu", "Name": "CPU Package", "Type": "Power", "Value": 18.4},
+      {"Hardware": "Nuvoton NCT6798D", "HardwareType": "SuperIO", "Name": "Motherboard", "Type": "Temperature", "Value": 38.0},
+      {"Hardware": "Nuvoton NCT6798D", "HardwareType": "SuperIO", "Name": "VRM MOS", "Type": "Temperature", "Value": 47.0},
+      {"Hardware": "Nuvoton NCT6798D", "HardwareType": "SuperIO", "Name": "CPU Fan", "Type": "Fan", "Value": 612.0},
+      {"Hardware": "Nuvoton NCT6798D", "HardwareType": "SuperIO", "Name": "Chassis Fan #1", "Type": "Fan", "Value": 890.0},
+      {"Hardware": "Nuvoton NCT6798D", "HardwareType": "SuperIO", "Name": "Chassis Fan #2", "Type": "Fan", "Value": 0.0},
+      {"Hardware": "Nuvoton NCT6798D", "HardwareType": "SuperIO", "Name": "+12V", "Type": "Voltage", "Value": 12.096},
+      {"Hardware": "Nuvoton NCT6798D", "HardwareType": "SuperIO", "Name": "Vcore", "Type": "Voltage", "Value": 0.762}
+    ]
+  }
+}
