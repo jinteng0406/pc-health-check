@@ -49,8 +49,11 @@ class SystemCheck(Check):
     def context(self, raw: dict) -> dict:
         brand, url = brand_of(raw.get("BoardManufacturer"))
         product = raw.get("BoardProduct") or ""
+        now = _date(raw.get("Now")) or datetime.now()
+        driver_ages = [(now - d).days for g in raw.get("Gpus") or []
+                       if _is_real_gpu(g.get("Name") or "") and (d := _date(g.get("DriverDate")))]
         return {"board": f"{brand} {product}".strip() or None, "board_brand": brand,
-                "board_support_url": url}
+                "board_support_url": url, "gpu_driver_days": max(driver_ages, default=None)}
 
     def analyze(self, raw: dict, ctx: dict) -> list[Finding]:
         now = _date(raw.get("Now")) or datetime.now()

@@ -77,6 +77,8 @@ class PerformanceCheck(Check):
                 cause="省電模式會限制 CPU 效能，桌上型電腦通常不需要。遊戲或大型程式會變慢。",
                 steps=["打開「控制台 → 電源選項」，改成「平衡」（建議）或「高效能」。"],
                 actions=[OPEN_POWER])
-        if name := POWER_SCHEMES.get(scheme):
-            return Finding("performance:power-ok", Severity.OK, f"電源計畫：{name}")
+        if name := POWER_SCHEMES.get(scheme) or raw.get("PowerSchemeName"):
+            custom = scheme not in POWER_SCHEMES
+            return Finding("performance:power-ok", Severity.OK, f"電源計畫：{name}" + ("（自訂）" if custom else ""),
+                           detail="這是主機板工具或你自己建立的電源計畫。" if custom else "")
         return None

@@ -4,9 +4,10 @@ from pchealth.model import Severity
 from pchealth.runner import load_fixture
 
 
-def kp(code="0", button="0", long_press="false", t="2026-10-01T10:00:00"):
+def kp(code="0", button="0", long_press="false", t="2026-10-01T10:00:00", sleep="0", wakes="0"):
     return {"Time": t, "Id": 41, "Data": {"BugcheckCode": code, "PowerButtonTimestamp": button,
-                                          "LongPowerButtonPressDetected": long_press}}
+                                          "LongPowerButtonPressDetected": long_press,
+                                          "SleepInProgress": sleep, "SystemSleepTransitionsToOn": wakes}}
 
 
 def analyze(**raw):
@@ -26,7 +27,19 @@ def test_kernel_power_classification():
     assert classify_kernel_power(kp(code="278")) == "bsod"
     assert classify_kernel_power(kp(button="133712345678")) == "button"
     assert classify_kernel_power(kp(long_press="true")) == "button"
+    assert classify_kernel_power(kp(sleep="6")) == "shutdown"
+    assert classify_kernel_power(kp(sleep="4")) == "sleep"
+    assert classify_kernel_power(kp(wakes="23")) == "sleep"
     assert classify_kernel_power(kp()) == "power"
+
+
+def test_shutdown_cut_and_sleep_hang_are_info_with_specific_advice():
+    fs = ids(analyze(KernelPower=[kp(sleep="6"), kp(wakes="23")]))
+    assert set(fs) == {"events:shutdown-cut", "events:sleep-hang"}
+    assert all(f.severity == Severity.INFO for f in fs.values())
+    assert "延長線" in fs["events:shutdown-cut"].steps[0]
+    assert "23 次" in fs["events:sleep-hang"].detail and "BIOS" in fs["events:sleep-hang"].steps[0]
+    assert "下一次開機時記錄" in fs["events:shutdown-cut"].detail
 
 
 def test_single_power_loss_is_info_two_is_warning():
@@ -66,7 +79,17 @@ def test_disk_bad_block_is_critical():
 def test_app_crashes_only_when_repeated():
     crashes = [{"App": "game.exe", "Time": "t"}] * 3 + [{"App": "chrome.exe", "Time": "t"}] * 2
     [f] = analyze(AppCrashes=crashes)
-    assert "game.exe" in f.title and f.severity == Severity.INFO
+    assert f.severity == Severity.INFO and "1 個程式" in f.title
+    assert "game.exe：3 次" in f.detail and "其他程式合計：2 次" in f.detail
+    assert analyze(AppCrashes=crashes[3:])[0].id == "events:ok"
+
+
+def test_many_crashing_apps_with_old_gpu_driver_suggests_driver_first():
+    crashes = [{"App": f"g{i}.exe", "Time": "t"} for i in range(4) for _ in range(3)]
+    [f] = EventsCheck().analyze({"Days": 30, "AppCrashes": crashes}, {"gpu_driver_days": 250})
+    assert "多個不同程式" in f.title and "顯示卡驅動" in f.steps[0] and "8 個月" in f.steps[0]
+    [f] = EventsCheck().analyze({"Days": 30, "AppCrashes": crashes}, {"gpu_driver_days": 20})
+    assert "顯示卡驅動" not in f.steps[0]
 
 
 def test_parse_bugcheck_codes():
@@ -78,5 +101,5 @@ def test_parse_bugcheck_codes():
 def test_demo_fixture():
     fs = ids(EventsCheck().run(load_fixture("events")).findings)
     assert {"events:bsod", "events:power-loss", "events:forced-off", "events:whea-corrected",
-            "events:tdr", "events:disk-io", "events:app:cyberpunk2077.exe"} <= set(fs)
+            "events:tdr", "events:disk-io", "events:app-crashes"} <= set(fs)
     assert "2 次藍屏" in fs["events:bsod"].title

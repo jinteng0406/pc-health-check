@@ -1,0 +1,619 @@
+{
+ "Antivirus": [
+  {
+   "Name": "Windows Defender",
+   "State": 397568
+  }
+ ],
+ "Defender": {
+  "AMRunningMode": "Normal",
+  "AMServiceEnabled": true,
+  "AntivirusEnabled": true,
+  "RealTimeProtectionEnabled": true,
+  "SignatureLastUpdated": "2026-10-06T03:53:50"
+ },
+ "History": [
+  {
+   "Date": "2026-10-06T20:43:11",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.574.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-10-05T13:47:17",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.557.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-10-03T00:17:32",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.518.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-10-02T18:47:59",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.514.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-10-02T10:39:31",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.510.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-10-01T12:52:05",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.491.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-30T23:07:24",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.485.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-29T21:08:21",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.462.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-29T12:05:17",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.453.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-28T13:30:27",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.439.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-28T01:03:31",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.432.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-27T22:30:56",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.429.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-27T14:03:25",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.420.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-26T12:09:01",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.407.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-26T00:10:07",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.398.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-25T10:48:39",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.387.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-24T19:45:00",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.374.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-24T07:47:54",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.364.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-24T00:56:34",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "2026-09 安全性修補程式 (KB5129195) (26200.9457)"
+  },
+  {
+   "Date": "2026-09-24T00:25:47",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.360.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-23T12:23:08",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.343.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-22T13:19:28",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.328.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-22T01:08:11",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.321.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-21T12:33:22",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.312.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-20T21:12:25",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "Microsoft Defender Antivirus 反惡意程式碼平台 - KB4052623 (版本 4.18.26080.4) 的更新 - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-20T21:09:45",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.303.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-17T23:07:37",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.255.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-17T21:04:55",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.252.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-17T10:25:44",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.242.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-16T13:08:42",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.226.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-16T00:09:29",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.221.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-15T11:10:10",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.213.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-14T22:51:52",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.206.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-14T10:42:20",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.199.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-13T20:31:16",
+   "HResult": "0x8024000B",
+   "Result": 5,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.188.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-13T13:35:17",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.185.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-12T03:20:48",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.162.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-11T20:43:34",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.154.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-11T00:44:15",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.146.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-10T23:07:35",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.145.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-10T11:58:24",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.135.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-10T11:43:00",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.121.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-09T17:24:57",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "KB890830：Windows 惡意軟體移除工具 x64 - v5.145"
+  },
+  {
+   "Date": "2026-09-09T17:19:21",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "2026-09 安全性修補程式 (KB5124008) (26200.9445)"
+  },
+  {
+   "Date": "2026-09-09T17:08:21",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "2026-09 .NET Framework 安全性更新 (KB5126052)"
+  },
+  {
+   "Date": "2026-09-09T13:59:56",
+   "HResult": "0x80240034",
+   "Result": 4,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.121.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-09T13:59:17",
+   "HResult": "0x8024000B",
+   "Result": 5,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.121.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-08T23:19:19",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.111.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-08T18:07:56",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.109.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-08T11:10:50",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.103.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-07T12:13:47",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.88.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-06T10:47:30",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.70.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-06T02:34:07",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.64.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-05T13:16:32",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.56.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-05T00:52:34",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.49.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-04T00:04:00",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "Microsoft Defender Antivirus 反惡意程式碼平台 - KB4052623 (版本 4.18.26080.3) 的更新 - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-04T00:03:15",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.28.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-03T09:59:54",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.16.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-02T21:50:15",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.447.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-09-01T15:09:23",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.439.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-31T19:32:07",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.425.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-31T06:52:57",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.417.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-30T13:32:09",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.405.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-30T10:37:53",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.402.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-30T00:12:27",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.396.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-29T11:55:27",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.388.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-28T23:27:56",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.381.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-28T19:32:08",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.375.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-28T11:20:09",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.372.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-27T21:24:23",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.364.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-27T08:28:14",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.350.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-26T14:44:51",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.343.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-26T02:25:48",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.337.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-25T18:44:47",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.331.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-25T13:30:32",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.329.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-25T00:05:50",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.321.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-24T11:58:45",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.314.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-23T22:23:43",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.304.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-23T19:18:00",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.303.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-23T07:58:41",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.292.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-22T13:49:07",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.283.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-22T00:58:27",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.275.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-21T12:46:15",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.268.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-21T00:34:25",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.259.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-20T12:23:53",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.251.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-19T23:59:49",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.244.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-19T11:08:47",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.236.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-18T20:12:32",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.225.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-18T09:03:19",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.217.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-17T16:29:47",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.205.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-17T01:12:28",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.194.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-16T22:00:32",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.193.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-16T13:06:39",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.185.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-16T00:57:32",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.178.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-15T11:26:15",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.170.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-15T00:43:13",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.162.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-14T10:37:07",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.153.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-13T10:09:37",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.130.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-12T13:26:29",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.457.120.0) - 目前通道 (廣泛)"
+  },
+  {
+   "Date": "2026-08-12T01:47:49",
+   "HResult": "0x00000000",
+   "Result": 2,
+   "Title": "KB890830：Windows 惡意軟體移除工具 x64 - v5.144"
+  }
+ ],
+ "Now": "2026-10-06T23:25:47",
+ "RebootPending": false
+}

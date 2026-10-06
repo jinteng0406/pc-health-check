@@ -1,0 +1,22 @@
+{
+ "BiosDate": "2024-04-18",
+ "BiosVersion": "1656",
+ "BoardManufacturer": "ASUSTeK COMPUTER INC.",
+ "BoardProduct": "PRIME Z790-P D4",
+ "Cpu": "12th Gen Intel(R) Core(TM) i5-12600KF",
+ "Gpus": [
+  {
+   "DriverDate": "2026-01-20",
+   "DriverVersion": "32.0.15.9186",
+   "Name": "NVIDIA GeForce RTX 4060 Ti"
+  }
+ ],
+ "LastBoot": "2026-09-24T07:36:25",
+ "Manufacturer": "ASUS",
+ "MemoryBytes": 34164097024,
+ "Model": "System Product Name",
+ "Now": "2026-10-06T23:25:42",
+ "OsBuild": "26200",
+ "OsCaption": "Microsoft Windows 11 專業版",
+ "OsVersion": "10.0.26200"
+}

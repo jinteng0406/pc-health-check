@@ -22,14 +22,36 @@ def _dates(events: list[dict]) -> str:
     return "、".join(shown) + (f"（另有 {len(times) - 5} 次較早的紀錄）" if len(times) > 5 else "")
 
 
+def _int(value) -> int:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return 0
+
+
 def classify_kernel_power(ev: dict) -> str:
-    """Kernel-Power 41 的原因：bsod（藍屏）、button（長按電源鍵）、power（突然斷電或當機）。"""
+    """Kernel-Power 41（沒有正常關機）的可能原因。
+
+    - bsod：藍屏
+    - button：長按電源鍵
+    - shutdown：關機途中斷電（SleepInProgress = 6 = PowerSystemShutdown）
+    - sleep：進入睡眠／休眠途中（2～5），或斷電前曾進出睡眠（常見於睡眠後叫不醒、按了電源鍵）
+    - power：其他（停電、拔插頭、電源供應器問題、完全當住）
+    """
     data = ev.get("Data") or {}
     if (bugchecks.parse_code(data.get("BugcheckCode")) or 0) != 0:
         return "bsod"
     if str(data.get("LongPowerButtonPressDetected", "")).lower() == "true" or data.get("PowerButtonTimestamp") not in (None, "", "0"):
         return "button"
+    state = _int(data.get("SleepInProgress"))
+    if state == 6:
+        return "shutdown"
+    if 2 <= state <= 5 or _int(data.get("SystemSleepTransitionsToOn")) > 0:
+        return "sleep"
     return "power"
+
+
+RECORDED_NOTE = "（時間是下一次開機時記錄的，實際斷電發生在這之前）"
 
 
 class EventsCheck(Check):
@@ -44,7 +66,7 @@ class EventsCheck(Check):
         out: list[Finding] = []
         out += self._crashes(raw, days)
         out += self._hardware(raw, days)
-        out += self._apps(raw, days)
+        out += self._apps(raw, days, ctx)
         if not out:
             out.append(Finding("events:ok", Severity.OK, f"最近 {days} 天沒有當機或硬體錯誤紀錄",
                                detail="沒有藍屏、不正常關機、硬體錯誤、顯示卡驅動重置或硬碟錯誤事件。"))
@@ -54,7 +76,7 @@ class EventsCheck(Check):
     def _crashes(self, raw: dict, days: int) -> list[Finding]:
         out = []
         kp = raw.get("KernelPower") or []
-        groups = {"bsod": [], "button": [], "power": []}
+        groups = {"bsod": [], "button": [], "shutdown": [], "sleep": [], "power": []}
         for ev in kp:
             groups[classify_kernel_power(ev)].append(ev)
 
@@ -88,12 +110,46 @@ class EventsCheck(Check):
                 steps=steps + ["打開「可靠性監視器」可以看到每次當機前後還發生了什麼事（例如剛更新了某個驅動）。"],
                 actions=[OPEN_RELIABILITY, OPEN_EVENTVWR]))
 
+        if sleep := groups["sleep"]:
+            n = len(sleep)
+            lines = []
+            for ev in sleep:
+                d = ev.get("Data") or {}
+                state, wakes = _int(d.get("SleepInProgress")), _int(d.get("SystemSleepTransitionsToOn"))
+                when = ev.get("Time", "")[:16].replace("T", " ")
+                lines.append(f"・{when}：" + ("正在進入睡眠或休眠時停止運作" if 2 <= state <= 5
+                                              else f"斷電前電腦已從睡眠喚醒過 {wakes} 次"))
+            out.append(Finding(
+                "events:sleep-hang", Severity.WARNING if n >= 3 else Severity.INFO,
+                f"最近 {days} 天有 {n} 次可能是睡眠後叫不醒而重開",
+                detail="\n".join(lines) + "\n" + RECORDED_NOTE,
+                cause="電腦在睡眠前後沒有正常關機。最常見的情況是：電腦睡著後螢幕叫不醒，只好按電源鍵或重開鍵。"
+                      "這通常是驅動程式或 BIOS 對睡眠的支援有問題，不是硬體故障，但每次強制重開都有讓檔案損毀的風險。",
+                steps=["更新主機板的晶片組驅動與 BIOS（主機板官網的 BIOS 更新說明常會提到改善睡眠／喚醒）。",
+                       "更新顯示卡驅動（睡眠叫不醒、螢幕不亮常跟顯示卡驅動有關）。",
+                       "下次叫不醒時，先試著動滑鼠、按鍵盤，或短按一下電源鍵，等 10 秒再判斷是否真的當住。",
+                       "如果一直改善不了，可以改用「關機」或「休眠」代替睡眠，或在電源選項中關閉「混合式睡眠」。"],
+                actions=[OPEN_RELIABILITY, Action("開啟電源選項", "powercfg.cpl")]))
+
+        if shutdown := groups["shutdown"]:
+            n = len(shutdown)
+            out.append(Finding(
+                "events:shutdown-cut", Severity.WARNING if n >= 5 else Severity.INFO,
+                f"最近 {days} 天有 {n} 次在關機還沒完成時就斷電",
+                detail=f"時間：{_dates(shutdown)}\n{RECORDED_NOTE}",
+                cause="Windows 正在關機的途中電源就被切斷了。常見原因是按了關機後馬上關延長線開關或拔插頭。"
+                      "Windows 常常在關機時安裝更新、把資料寫回硬碟，這時候斷電可能讓檔案或系統更新損壞。",
+                steps=["按關機後，等電腦的電源燈和風扇完全停止，再關延長線或拔插頭。",
+                       "如果畫面顯示「正在進行更新，請勿關閉電腦」，一定要等它跑完。",
+                       "如果是因為關機卡很久才忍不住斷電，可以在「可靠性監視器」看看關機時有沒有程式出錯。"],
+                actions=[OPEN_RELIABILITY]))
+
         if power := groups["power"]:
             n = len(power)
             sev = Severity.CRITICAL if n >= 5 else Severity.WARNING if n >= 2 else Severity.INFO
             out.append(Finding(
                 "events:power-loss", sev, f"最近 {days} 天有 {n} 次突然斷電或當機重開",
-                detail=f"時間：{_dates(power)}\n（不是藍屏，也沒有偵測到長按電源鍵）",
+                detail=f"時間：{_dates(power)}\n{RECORDED_NOTE}\n（不是藍屏、不是在關機或睡眠時，也沒有偵測到長按電源鍵）",
                 cause="電腦沒有經過正常關機就停止運作。常見原因：停電或跳電、電源線鬆脫、"
                       "電源供應器老化或瓦數不足（特別是玩遊戲時發生）、電腦完全當住後被重新啟動。",
                 steps=["回想這些時間點是否有停電、跳電，或有人拔到插頭。",
@@ -106,7 +162,7 @@ class EventsCheck(Check):
             n = len(button)
             out.append(Finding(
                 "events:forced-off", Severity.WARNING if n >= 3 else Severity.INFO,
-                f"最近 {days} 天有 {n} 次長按電源鍵強制關機", detail=f"時間：{_dates(button)}",
+                f"最近 {days} 天有 {n} 次長按電源鍵強制關機", detail=f"時間：{_dates(button)}\n{RECORDED_NOTE}",
                 cause="強制關機通常是因為電腦卡住沒有反應。偶爾一次沒關係，但次數多代表有東西讓系統當住，"
                       "而且強制關機本身也可能讓正在寫入的檔案損毀。",
                 steps=["下次卡住時，先等一兩分鐘，或按 Ctrl+Shift+Esc 開工作管理員結束沒有回應的程式。",
@@ -184,19 +240,31 @@ class EventsCheck(Check):
         return out
 
     # ---- 程式當掉 ----
-    def _apps(self, raw: dict, days: int) -> list[Finding]:
-        counts = Counter((c.get("App") or "未知程式") for c in raw.get("AppCrashes") or [])
-        out = []
-        for app, n in counts.most_common(3):
-            if n < APP_CRASH_MIN:
-                break
-            times = [c for c in raw["AppCrashes"] if (c.get("App") or "未知程式") == app]
-            out.append(Finding(
-                f"events:app:{app.lower()}", Severity.INFO, f"{app} 最近 {days} 天當掉 {n} 次",
-                detail=f"時間：{_dates(times)}",
-                cause="同一個程式反覆當掉，通常是程式本身的問題，不一定代表電腦有毛病。"
-                      "但如果很多不同的程式都在當，就可能是系統或硬體問題。",
-                steps=[f"更新 {app} 到最新版本，或重新安裝。",
-                       "如果是遊戲，可以用遊戲平台（Steam 等）的「驗證遊戲檔案完整性」功能。"],
-                actions=[OPEN_RELIABILITY]))
-        return out
+    def _apps(self, raw: dict, days: int, ctx: dict) -> list[Finding]:
+        crashes = raw.get("AppCrashes") or []
+        counts = Counter((c.get("App") or "未知程式") for c in crashes)
+        repeated = [(app, n) for app, n in counts.most_common() if n >= APP_CRASH_MIN]
+        if not repeated:
+            return []
+        many = len(repeated) >= 3
+        lines = [f"・{app}：{n} 次" for app, n in repeated]
+        others = len(crashes) - sum(n for _, n in repeated)
+        if others:
+            lines.append(f"・其他程式合計：{others} 次")
+        steps = []
+        driver_days = ctx.get("gpu_driver_days")
+        if many and driver_days and driver_days >= 180:
+            steps.append(f"有好幾個不同的程式都在當，而你的顯示卡驅動已經約 {driver_days // 30} 個月沒更新，"
+                         "建議先更新顯示卡驅動，再觀察還會不會當。")
+        steps += ["更新反覆當掉的程式到最新版本，或重新安裝。",
+                  "遊戲可以用遊戲平台（Steam 等）的「驗證遊戲檔案完整性」功能。"]
+        if many:
+            steps.append("如果更新後還是很多程式在當，可以到 BIOS 暫時關閉 XMP（記憶體超頻）測試，"
+                         "並用「Windows 記憶體診斷」檢查記憶體。")
+        return [Finding(
+            "events:app-crashes", Severity.INFO,
+            f"最近 {days} 天有 {len(repeated)} 個程式反覆當掉" + ("（含多個不同程式）" if many else ""),
+            detail=f"當掉 {APP_CRASH_MIN} 次以上的程式：\n" + "\n".join(lines),
+            cause="單一程式反覆當掉，通常是那個程式本身的問題。如果很多不同的程式（特別是遊戲）都在當，"
+                  "就比較可能是共同的原因，例如顯示卡驅動、記憶體不穩定或系統檔案問題。",
+            steps=steps, actions=[OPEN_RELIABILITY, MEMORY_DIAG])]

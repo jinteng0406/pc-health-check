@@ -50,6 +50,32 @@ def test_v03_gpu_full_speed_x8():
     assert f.severity == Severity.OK and "PCIe x8" in f.title and "16.0 GB" in f.detail
 
 
+def load_v04(name):
+    return json.loads((DATA.parent / "home_v04" / f"{name}.json").read_text(encoding="utf-8"))
+
+
+def test_v04_events_match_what_actually_happened():
+    """使用者確認：9/9 是關機途中關延長線、9/23 是睡眠叫不醒按電源鍵；電腦其實很穩定。"""
+    from pchealth.checks.events import EventsCheck
+    ctx = SystemCheck().context(load_v04("system"))
+    fs = {f.id: f for f in EventsCheck().analyze(load_v04("events"), ctx)}
+    assert set(fs) == {"events:shutdown-cut", "events:sleep-hang", "events:app-crashes"}
+    assert all(f.severity == Severity.INFO for f in fs.values())  # 穩定的電腦不該出現「注意」以上
+    assert "2026-09-09" in fs["events:shutdown-cut"].detail
+    assert "23 次" in fs["events:sleep-hang"].detail
+    assert "顯示卡驅動" in fs["events:app-crashes"].steps[0]  # 多款遊戲當掉 + 驅動 8 個月沒更新
+
+
+def test_v04_security_and_performance_ok():
+    from pchealth.checks.performance import PerformanceCheck
+    from pchealth.checks.security import SecurityCheck
+    sec = {f.id: f for f in SecurityCheck().analyze(load_v04("security"), {})}
+    assert set(sec) == {"security:updates-ok", "security:av-ok"}
+    assert "2026-09-24" in sec["security:updates-ok"].title  # 不是 Defender 病毒碼或平台更新的日期
+    perf = PerformanceCheck().analyze(load_v04("performance"), {})
+    assert all(f.severity == Severity.OK for f in perf)
+
+
 def test_storage_unknown_error_count_is_not_presented_as_zero():
     disks = [f for f in StorageCheck().analyze(load("storage"), {}) if ":disk:" in f.id]
     for f in disks:

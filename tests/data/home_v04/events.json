@@ -1,0 +1,219 @@
+{
+ "AppCrashes": [
+  {
+   "App": "app01.exe",
+   "Time": "2026-10-06T20:32:22"
+  },
+  {
+   "App": "app02.exe",
+   "Time": "2026-10-03T00:11:25"
+  },
+  {
+   "App": "app03.exe",
+   "Time": "2026-10-01T12:31:53"
+  },
+  {
+   "App": "app04.exe",
+   "Time": "2026-10-01T00:11:58"
+  },
+  {
+   "App": "app03.exe",
+   "Time": "2026-09-29T11:49:18"
+  },
+  {
+   "App": "app05.exe",
+   "Time": "2026-09-28T23:22:50"
+  },
+  {
+   "App": "app06.exe",
+   "Time": "2026-09-28T00:59:01"
+  },
+  {
+   "App": "app02.exe",
+   "Time": "2026-09-26T23:57:38"
+  },
+  {
+   "App": "app06.exe",
+   "Time": "2026-09-26T16:49:02"
+  },
+  {
+   "App": "app06.exe",
+   "Time": "2026-09-26T12:39:31"
+  },
+  {
+   "App": "app06.exe",
+   "Time": "2026-09-26T12:39:25"
+  },
+  {
+   "App": "app06.exe",
+   "Time": "2026-09-26T11:43:23"
+  },
+  {
+   "App": "app02.exe",
+   "Time": "2026-09-25T16:01:51"
+  },
+  {
+   "App": "app03.exe",
+   "Time": "2026-09-24T19:08:11"
+  },
+  {
+   "App": "app07.exe",
+   "Time": "2026-09-24T07:36:54"
+  },
+  {
+   "App": "app08.exe",
+   "Time": "2026-09-23T23:07:50"
+  },
+  {
+   "App": "app06.exe",
+   "Time": "2026-09-23T17:40:37"
+  },
+  {
+   "App": "app03.exe",
+   "Time": "2026-09-23T13:54:32"
+  },
+  {
+   "App": "app09.exe",
+   "Time": "2026-09-15T21:20:28"
+  },
+  {
+   "App": "app01.exe",
+   "Time": "2026-09-14T09:48:53"
+  },
+  {
+   "App": "app02.exe",
+   "Time": "2026-09-13T23:16:19"
+  },
+  {
+   "App": "app08.exe",
+   "Time": "2026-09-13T22:38:22"
+  },
+  {
+   "App": "app08.exe",
+   "Time": "2026-09-13T22:36:16"
+  },
+  {
+   "App": "app02.exe",
+   "Time": "2026-09-13T21:52:13"
+  },
+  {
+   "App": "app08.exe",
+   "Time": "2026-09-13T20:39:09"
+  },
+  {
+   "App": "app01.exe",
+   "Time": "2026-09-11T19:26:33"
+  },
+  {
+   "App": "app05.exe",
+   "Time": "2026-09-10T19:52:10"
+  },
+  {
+   "App": "app10.exe",
+   "Time": "2026-09-10T19:41:05"
+  },
+  {
+   "App": "app08.exe",
+   "Time": "2026-09-09T19:25:38"
+  },
+  {
+   "App": "app11.exe",
+   "Time": "2026-09-09T13:43:05"
+  },
+  {
+   "App": "app03.exe",
+   "Time": "2026-09-09T13:41:09"
+  },
+  {
+   "App": "app01.exe",
+   "Time": "2026-09-08T23:45:22"
+  },
+  {
+   "App": "app11.exe",
+   "Time": "2026-09-08T19:08:51"
+  },
+  {
+   "App": "app12.exe",
+   "Time": "2026-09-07T22:28:00"
+  }
+ ],
+ "BugChecks": null,
+ "Days": 30,
+ "DiskErrors": null,
+ "DisplayTdr": null,
+ "KernelPower": [
+  {
+   "Data": {
+    "BootAppStatus": "0",
+    "BugcheckCode": "0",
+    "BugcheckInfoFromEFI": "false",
+    "BugcheckParameter1": "0x0",
+    "BugcheckParameter2": "0x0",
+    "BugcheckParameter3": "0x0",
+    "BugcheckParameter4": "0x0",
+    "Checkpoint": "16",
+    "CheckpointStatus": "0",
+    "ConnectedStandbyInProgress": "false",
+    "CsEntryScenarioInstanceId": "90",
+    "CsEntryScenarioInstanceIdV2": "90",
+    "InputSuppressionState": "0",
+    "LidReliability": "false",
+    "LidState": "3",
+    "LongPowerButtonPressDetected": "false",
+    "PowerButtonSuppressionState": "0",
+    "PowerButtonTimestamp": "0",
+    "SleepInProgress": "0",
+    "SystemSleepTransitionsToOn": "23",
+    "WHEABootErrorCount": "0"
+   },
+   "Id": 41,
+   "Provider": "Microsoft-Windows-Kernel-Power",
+   "Time": "2026-09-23T13:45:25"
+  },
+  {
+   "Data": {
+    "BootAppStatus": "3221225684",
+    "BugcheckCode": "0",
+    "BugcheckInfoFromEFI": "false",
+    "BugcheckParameter1": "0x0",
+    "BugcheckParameter2": "0x0",
+    "BugcheckParameter3": "0x0",
+    "BugcheckParameter4": "0x0",
+    "Checkpoint": "16",
+    "CheckpointStatus": "0",
+    "ConnectedStandbyInProgress": "false",
+    "CsEntryScenarioInstanceId": "70",
+    "CsEntryScenarioInstanceIdV2": "70",
+    "InputSuppressionState": "0",
+    "LidReliability": "false",
+    "LidState": "3",
+    "LongPowerButtonPressDetected": "false",
+    "PowerButtonSuppressionState": "0",
+    "PowerButtonTimestamp": "0",
+    "SleepInProgress": "6",
+    "SystemSleepTransitionsToOn": "19",
+    "WHEABootErrorCount": "0"
+   },
+   "Id": 41,
+   "Provider": "Microsoft-Windows-Kernel-Power",
+   "Time": "2026-09-09T13:40:52"
+  }
+ ],
+ "Minidumps": [],
+ "Now": "2026-10-06T23:25:45",
+ "NtfsErrors": null,
+ "NvmeErrors": null,
+ "UnexpectedOff": [
+  {
+   "Id": 6008,
+   "Provider": "EventLog",
+   "Time": "2026-09-23T13:46:57"
+  },
+  {
+   "Id": 6008,
+   "Provider": "EventLog",
+   "Time": "2026-09-09T13:41:02"
+  }
+ ],
+ "Whea": null
+}

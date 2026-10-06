@@ -52,6 +52,37 @@ def trim_smart(raw: dict) -> None:
         raw["Smart"]["disks"][key] = {k: v for k, v in data.items() if k in KEEP_KEYS}
 
 
+WINDOWS_NAMES = {"securityhealth", "explorer", "memory compression", "onedrive", "onedrivesetup",
+                 "rtkaudservice", "rtkaudservice64", "rtkaudservice.exe", "svchost", "dwm"}
+
+
+class Pseudonyms:
+    """把使用者安裝的程式名稱換成 app01、app02…（同名得到同代號），Windows 內建名稱保留。"""
+
+    def __init__(self):
+        self.names: dict[str, str] = {}
+
+    def __call__(self, name: str | None) -> str | None:
+        if not name or name.lower() in WINDOWS_NAMES:
+            return name
+        stem, dot, ext = name.rpartition(".")
+        base, suffix = (stem, f".{ext}") if dot and ext.lower() == "exe" else (name, "")
+        if base.lower() not in self.names:
+            self.names[base.lower()] = f"app{len(self.names) + 1:02d}"
+        return self.names[base.lower()] + suffix
+
+
+def pseudonymize(check_id: str, raw: dict) -> None:
+    alias = Pseudonyms()
+    if check_id == "events":
+        for c in raw.get("AppCrashes") or []:
+            c["App"] = alias(c.get("App"))
+    elif check_id == "performance":
+        for key in ("Startup", "TopProcesses"):
+            for item in raw.get(key) or []:
+                item["Name"] = alias(item.get("Name"))
+
+
 def main(src: str, dest: str) -> None:
     report = json.loads(Path(src).read_text(encoding="utf-8"))
     out_dir = Path(dest)
@@ -61,6 +92,8 @@ def main(src: str, dest: str) -> None:
             continue
         if res["check_id"] == "storage":
             trim_smart(res["raw"])
+        if isinstance(res["raw"], dict):
+            pseudonymize(res["check_id"], res["raw"])
         path = out_dir / f"{res['check_id']}.json"
         path.write_text(json.dumps(scrub(res["raw"]), ensure_ascii=False, indent=1), encoding="utf-8")
         print(f"寫入 {path}")

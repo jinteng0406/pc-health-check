@@ -43,6 +43,19 @@ def test_onedrive_nothing_newer(tmp_path):
     assert updater.check_onedrive(tmp_path) is None
 
 
+def test_check_reports_every_outcome(tmp_path, monkeypatch):
+    monkeypatch.setattr(updater, "onedrive_dir", lambda: tmp_path)
+    monkeypatch.setattr(updater, "__version__", "0.4.0")
+    newer = lambda t, local="0.4.0": updater.parse_version(t) > (0, 4, 0)
+    monkeypatch.setattr(updater, "is_newer", newer)
+    assert updater.check(lambda: ("v0.4.0", "u"))["kind"] == "latest"
+    assert updater.check(lambda: None)["kind"] == "unknown"
+    assert updater.check(lambda: ("v0.5.0", "u"))["kind"] == "github"
+    (tmp_path / "PCHealthCheck-v0.5.0.zip").write_bytes(b"")
+    r = updater.check(lambda: ("v0.5.0", "u"))
+    assert r["kind"] == "onedrive" and r["tag"] == "v0.5.0"
+
+
 def test_version_compare():
     assert updater.is_newer("v0.2.0", "0.1.0")
     assert updater.is_newer("v0.10.0", "0.9.9")

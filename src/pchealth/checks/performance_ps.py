@@ -20,10 +20,16 @@ function Get-Disabled {
     $names
 }
 $disabled = Get-Disabled
-$startup = @(Get-CimInstance Win32_StartupCommand | ForEach-Object {
+$sid = [Security.Principal.WindowsIdentity]::GetCurrent().User.Value
+# 只算目前使用者（HKU\<自己的 SID>）、所有使用者（HKLM）與啟動資料夾；
+# 略過 .DEFAULT 與系統服務帳號（S-1-5-18/19/20）的登錄區，那些不是使用者登入時會執行的項目
+$startup = @(Get-CimInstance Win32_StartupCommand | Where-Object {
+    $loc = "$($_.Location)"
+    -not $loc.StartsWith('HKU\') -or $loc.StartsWith("HKU\$sid\")
+} | ForEach-Object {
     $off = $disabled.ContainsKey("$($_.Name)".ToLower()) -or ($_.Location -like '*Startup*' -and $disabled.ContainsKey("$($_.Name).lnk".ToLower()))
-    # HKU\S-1-5-21-…（帳號 SID）換成 HKCU，避免匯出資料含有可識別帳號的資訊
-    [pscustomobject]@{ Name = $_.Name; Location = ("$($_.Location)" -replace '^HKU\\S-1-5-[\d-]+', 'HKCU'); Enabled = -not $off }
+    # 帳號 SID 換成 HKCU，避免匯出資料含有可識別帳號的資訊
+    [pscustomobject]@{ Name = $_.Name; Location = ("$($_.Location)".Replace("HKU\$sid", 'HKCU')); Enabled = -not $off }
 })
 $os = Get-CimInstance Win32_OperatingSystem
 $top = @(Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 5 |
@@ -35,5 +41,6 @@ $scheme = (powercfg /getactivescheme) -join ' '
     FreeMemoryKB  = [int64]$os.FreePhysicalMemory
     TopProcesses  = $top
     PowerScheme   = if ($scheme -match '([0-9a-fA-F-]{36})') { $Matches[1].ToLower() } else { $null }
+    PowerSchemeName = if ($scheme -match '\(([^)]+)\)\s*$') { $Matches[1] } else { $null }
 } | ConvertTo-Json -Depth 4 -Compress
 """

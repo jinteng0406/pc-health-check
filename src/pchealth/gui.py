@@ -52,13 +52,10 @@ class CheckWorker(QThread):
 
 
 class UpdateWorker(QThread):
-    found = Signal(str, str, bool)  # 版本、連結、是否在 OneDrive
+    done = Signal(dict)
 
     def run(self):
-        if local := updater.check_onedrive():
-            self.found.emit(local[0], QUrl.fromLocalFile(str(local[1])).toString(), True)
-        elif latest := updater.check_latest():
-            self.found.emit(latest[0], latest[1], False)
+        self.done.emit(updater.check())
 
 
 class MainWindow(QMainWindow):
@@ -121,7 +118,7 @@ class MainWindow(QMainWindow):
         self.statusBar().addWidget(QLabel(f"版本 {__version__}"))
         self.statusBar().addPermanentWidget(self.update_label)
         self.update_worker = UpdateWorker()
-        self.update_worker.found.connect(self.on_update_found)
+        self.update_worker.done.connect(self.on_update_checked)
         self.update_worker.start()
 
     # ---- 檢查流程 ----
@@ -251,11 +248,20 @@ class MainWindow(QMainWindow):
             with open(path, "w", encoding="utf-8") as fp:
                 json.dump(self.report, fp, ensure_ascii=False, indent=2)
 
-    def on_update_found(self, tag: str, url: str, onedrive: bool):
-        text = "已在 OneDrive，點此開啟資料夾" if onedrive else "點此下載"
-        self.update_label.setText(
-            f"<a href='{html.escape(url)}' style='color:{COLORS[Severity.CRITICAL]}'>"
-            f"有新版本 {html.escape(tag)}，{text}</a>")
+    def on_update_checked(self, result: dict):
+        kind = result.get("kind")
+        self.update_label.setToolTip("已找到 OneDrive 的 PCHealthCheck 資料夾" if result.get("onedrive_found")
+                                     else "找不到 OneDrive 的 PCHealthCheck 資料夾，新版提示會改連到 GitHub")
+        if kind in ("onedrive", "github"):
+            url = (QUrl.fromLocalFile(result["target"]).toString() if kind == "onedrive" else result["target"])
+            text = "已在 OneDrive，點此開啟資料夾" if kind == "onedrive" else "點此下載"
+            self.update_label.setText(
+                f"<a href='{html.escape(url)}' style='color:{COLORS[Severity.CRITICAL]}'>"
+                f"有新版本 {html.escape(result['tag'])}，{text}</a>")
+        elif kind == "latest":
+            self.update_label.setText(f"<span style='color:{COLORS[Severity.OK]}'>已是最新版本</span>")
+        else:
+            self.update_label.setText(f"<span style='color:{ERROR_COLOR}'>無法檢查新版本（可能沒有網路）</span>")
 
 
 def _href(target: str) -> str:

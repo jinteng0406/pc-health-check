@@ -13,7 +13,8 @@ OPEN_WU = Action("開啟 Windows Update", "ms-settings:windowsupdate")
 OPEN_WU_HISTORY = Action("更新紀錄", "ms-settings:windowsupdate-history")
 OPEN_SECURITY = Action("開啟 Windows 安全性", "windowsdefender:")
 
-DEFENDER_KB = "KB2267602"  # Defender 病毒碼，幾乎每天更新，不代表 Windows 本身有更新
+# Defender 病毒碼（幾乎每天）與 Defender 平台更新，都不代表 Windows 本身有更新
+DEFENDER_KBS = ("KB2267602", "KB4052623")
 _KB = re.compile(r"KB\d{6,}", re.IGNORECASE)
 UPDATE_OLD_DAYS = 40  # 每月第二個星期二發佈，超過 40 天代表至少漏掉一次
 SIGNATURE_OLD_DAYS = 7
@@ -29,7 +30,8 @@ def _date(s: str | None) -> datetime | None:
 
 def is_windows_update(title: str) -> bool:
     """有 KB 編號、且不是 Defender 病毒碼的才算 Windows 本身的更新（排除 Store 應用程式更新）。"""
-    return bool(_KB.search(title or "")) and DEFENDER_KB not in (title or "").upper()
+    upper = (title or "").upper()
+    return bool(_KB.search(upper)) and not any(kb in upper for kb in DEFENDER_KBS)
 
 
 def av_enabled(state: int) -> bool:

@@ -51,8 +51,8 @@ def is_newer(remote_tag: str, local: str = __version__) -> bool:
         return False
 
 
-def check_latest(timeout: float = 5) -> tuple[str, str] | None:
-    """有新版時回傳 (版本標籤, 下載頁網址)，否則或連不上時回傳 None。"""
+def fetch_latest(timeout: float = 5) -> tuple[str, str] | None:
+    """GitHub 上最新版的 (版本標籤, 下載頁網址)；連不上時回傳 None。"""
     req = urllib.request.Request(API_URL, headers={
         "Accept": "application/vnd.github+json", "User-Agent": "pc-health-check"})
     try:
@@ -60,5 +60,17 @@ def check_latest(timeout: float = 5) -> tuple[str, str] | None:
             data = json.load(resp)
     except Exception:
         return None
-    tag = data.get("tag_name", "")
-    return (tag, data.get("html_url", "")) if is_newer(tag) else None
+    return data.get("tag_name", ""), data.get("html_url", "")
+
+
+def check(fetch=fetch_latest) -> dict:
+    """回傳 {"kind": onedrive／github／latest／unknown, "tag", "target", "onedrive_found"}。"""
+    folder = onedrive_dir()
+    if local := check_onedrive(folder):
+        return {"kind": "onedrive", "tag": local[0], "target": str(local[1]), "onedrive_found": True}
+    latest = fetch()
+    if latest is None:
+        return {"kind": "unknown", "onedrive_found": folder is not None}
+    if is_newer(latest[0]):
+        return {"kind": "github", "tag": latest[0], "target": latest[1], "onedrive_found": folder is not None}
+    return {"kind": "latest", "onedrive_found": folder is not None}
