@@ -71,6 +71,9 @@ class Health:
     spare_threshold: int | None = None
     smart_passed: bool | None = None
     unsafe_shutdowns: int | None = None
+    warning_temp_minutes: int | None = None  # NVMe：累計在警戒溫度以上的分鐘數（過熱歷史）
+    critical_temp_minutes: int | None = None  # NVMe：累計在危險溫度以上的分鐘數
+    temp_limit: int | None = None  # 硬碟自己定義的警戒溫度
 
 
 def from_windows(r: dict | None) -> Health:
@@ -98,6 +101,10 @@ def from_smartctl(j: dict | None) -> Health:
         h.spare = log.get("available_spare")
         h.spare_threshold = log.get("available_spare_threshold")
         h.unsafe_shutdowns = log.get("unsafe_shutdowns")
+        h.warning_temp_minutes = log.get("warning_temp_time")
+        h.critical_temp_minutes = log.get("critical_comp_time")
+    h.temp_limit = ((j.get("temperature") or {}).get("op_limit_max")
+                    or (j.get("nvme_composite_temperature_threshold") or {}).get("warning"))
     if table := (j.get("ata_smart_attributes") or {}).get("table"):
         raw = {a.get("id"): (a.get("raw") or {}).get("value") for a in table}
         h.reallocated = raw.get(5)
@@ -214,8 +221,23 @@ class StorageCheck(Check):
                 [BACKUP_NOW if sev == Severity.CRITICAL else "確認重要資料都有備份。", "開始規劃更換這顆 SSD。",
                  "避免把大量頻繁寫入的工作（例如錄影暫存、下載暫存）放在這顆上。"], tool_actions)
 
+        if h.critical_temp_minutes:
+            add("temp-history", Severity.WARNING, f"曾在危險溫度下運作 {h.critical_temp_minutes:,} 分鐘",
+                "硬碟記錄到自己曾經熱到危險範圍。高溫會讓硬碟降速，長期下來也會縮短壽命，代表散熱需要改善。",
+                ["確認 M.2 散熱片有裝上、保護膜有撕掉。", "確認機殼風扇運作正常、灰塵不多。",
+                 "下次檢查時比較這個數字，若持續增加代表散熱問題還在。"])
+        elif h.warning_temp_minutes:
+            sev = Severity.WARNING if h.warning_temp_minutes >= 60 else Severity.INFO
+            add("temp-history", sev, f"曾在高溫下運作 {h.warning_temp_minutes:,} 分鐘",
+                "硬碟記錄到自己曾經超過警戒溫度（累計時間）。偶爾在大量讀寫時發生是正常的，"
+                "但時間很長或持續增加，就代表散熱不足。",
+                ["下次檢查時比較這個數字；如果持續增加，請改善 M.2 散熱或機殼通風。"])
+
         temp = h.temperature or 0
         warn, crit = TEMP_LIMITS[kind]
+        if h.temp_limit:  # 以硬碟自己定義的警戒溫度為準
+            crit = min(crit, h.temp_limit)
+            warn = min(warn, crit - 5)
         if temp >= warn:
             sev = Severity.CRITICAL if temp >= crit else Severity.WARNING
             add("temp", sev, f"溫度偏高（{temp}°C）",
@@ -254,7 +276,9 @@ class StorageCheck(Check):
         if h.spare is not None:
             info.append(f"備用區剩餘：{h.spare}%（低於 {h.spare_threshold}% 為危險）")
         if h.temperature:
-            info.append(f"目前溫度：{h.temperature}°C")
+            info.append(f"目前溫度：{h.temperature}°C" + (f"（硬碟的警戒溫度 {h.temp_limit}°C）" if h.temp_limit else ""))
+        if h.warning_temp_minutes is not None:
+            info.append(f"累計過熱時間：警戒以上 {h.warning_temp_minutes:,} 分鐘、危險以上 {h.critical_temp_minutes or 0:,} 分鐘")
         if h.power_on_hours is not None:
             info.append(f"通電時數：{h.power_on_hours:,} 小時")
         info.append(f"無法修復的讀寫錯誤：{h.media_errors} 次" if h.media_errors is not None

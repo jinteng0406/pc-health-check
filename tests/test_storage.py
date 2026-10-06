@@ -124,6 +124,40 @@ def test_smart_missing_values_fall_back_to_windows():
     assert "磨損 9%" in f.title and "44°C" in f.title
 
 
+def test_overheat_history():
+    def with_log(**kw):
+        return NVME_SMART | {"nvme_smart_health_information_log": NVME_SMART["nvme_smart_health_information_log"] | kw}
+    [f] = analyze_smart(with_log(warning_temp_time=12, critical_comp_time=0))
+    assert f.severity == Severity.INFO and "12 分鐘" in f.title
+    assert analyze_smart(with_log(warning_temp_time=300))[0].severity == Severity.WARNING
+    [f] = analyze_smart(with_log(warning_temp_time=300, critical_comp_time=5))
+    assert "危險溫度" in f.title and f.severity == Severity.WARNING
+
+
+def test_drive_own_temperature_limit_lowers_threshold():
+    j = NVME_SMART | {"temperature": {"current": 72, "op_limit_max": 75}}
+    [f] = analyze_smart(j)
+    assert f.severity == Severity.WARNING  # 72 ≥ 75-5
+    j = NVME_SMART | {"temperature": {"current": 76, "op_limit_max": 75}}
+    assert analyze_smart(j)[0].severity == Severity.CRITICAL
+
+
+def test_smart_output_is_trimmed_to_whitelist(monkeypatch, tmp_path):
+    import json as _json
+    import subprocess
+    from pchealth.checks import smart
+    full = {"model_name": "X", "serial_number": "SECRET", "nvme_namespaces": [{"eui64": {"ext_id": 1}}],
+            "smartctl": {"version": [7, 5], "argv": ["smartctl"], "exit_status": 0},
+            "smart_status": {"passed": True}}
+
+    class Done:
+        stdout = _json.dumps(full).encode()
+    monkeypatch.setattr(subprocess, "run", lambda *a, **k: Done())
+    data = smart._run(tmp_path / "smartctl.exe", ["-a", "/dev/sda"])
+    assert "serial_number" not in data and "nvme_namespaces" not in data
+    assert data["smartctl"] == {"version": [7, 5], "exit_status": 0}
+
+
 def test_smartctl_disk_names():
     from pchealth.checks.smart import device_name
     assert [device_name(i) for i in (0, 1, 25, 26)] == ["/dev/sda", "/dev/sdb", "/dev/sdz", "/dev/sdaa"]

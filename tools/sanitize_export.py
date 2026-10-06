@@ -12,7 +12,8 @@ from pathlib import Path
 
 MAC_OR_SERIAL = re.compile(r"(?<![0-9A-F])[0-9A-F]{12,}(?![0-9A-F])", re.IGNORECASE)
 GUID = re.compile(r"\{[0-9A-F-]{36}\}", re.IGNORECASE)
-SENSITIVE_KEYS = {"SerialNumber", "UniqueId", "ObjectId", "Path", "UUID", "IdentifyingNumber"}
+SENSITIVE_KEYS = {"SerialNumber", "UniqueId", "ObjectId", "Path", "UUID", "IdentifyingNumber",
+                  "serial_number", "wwn", "eui64", "nvme_eui64", "logical_unit_id"}
 
 
 def sanitize_pnp_id(pnp_id: str, index: int) -> str:
@@ -43,6 +44,14 @@ def scrub(obj, counter=[0]):
     return obj
 
 
+def trim_smart(raw: dict) -> None:
+    """舊版匯出的 smartctl 資料可能很完整，套用程式目前的欄位白名單。"""
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+    from pchealth.checks.smart import KEEP_KEYS
+    for key, data in ((raw.get("Smart") or {}).get("disks") or {}).items():
+        raw["Smart"]["disks"][key] = {k: v for k, v in data.items() if k in KEEP_KEYS}
+
+
 def main(src: str, dest: str) -> None:
     report = json.loads(Path(src).read_text(encoding="utf-8"))
     out_dir = Path(dest)
@@ -50,6 +59,8 @@ def main(src: str, dest: str) -> None:
     for res in report["results"]:
         if res.get("raw") is None:
             continue
+        if res["check_id"] == "storage":
+            trim_smart(res["raw"])
         path = out_dir / f"{res['check_id']}.json"
         path.write_text(json.dumps(scrub(res["raw"]), ensure_ascii=False, indent=1), encoding="utf-8")
         print(f"寫入 {path}")

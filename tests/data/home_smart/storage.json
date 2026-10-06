@@ -1,0 +1,217 @@
+{
+ "Admin": true,
+ "Disks": [
+  {
+   "BusType": "NVMe",
+   "DeviceId": "1",
+   "FriendlyName": "CT1000P3PSSD8",
+   "HealthStatus": "Healthy",
+   "MediaType": "SSD",
+   "OperationalStatus": "OK",
+   "Reliability": {
+    "PowerOnHours": null,
+    "ReadErrorsUncorrected": null,
+    "Temperature": 31,
+    "TemperatureMax": 83,
+    "Wear": 0,
+    "WriteErrorsUncorrected": null
+   },
+   "Size": 1000204886016
+  },
+  {
+   "BusType": "NVMe",
+   "DeviceId": "0",
+   "FriendlyName": "CT1000P3PSSD8",
+   "HealthStatus": "Healthy",
+   "MediaType": "SSD",
+   "OperationalStatus": "OK",
+   "Reliability": {
+    "PowerOnHours": null,
+    "ReadErrorsUncorrected": null,
+    "Temperature": 38,
+    "TemperatureMax": 83,
+    "Wear": 0,
+    "WriteErrorsUncorrected": null
+   },
+   "Size": 1000204886016
+  }
+ ],
+ "Smart": {
+  "disks": {
+   "0": {
+    "device": {
+     "info_name": "/dev/sda",
+     "name": "/dev/sda",
+     "protocol": "NVMe",
+     "type": "nvme"
+    },
+    "endurance_used": {
+     "current_percent": 7
+    },
+    "firmware_version": "P9CR413",
+    "model_name": "CT1000P3PSSD8",
+    "nvme_composite_temperature_threshold": {
+     "critical": 85,
+     "warning": 83
+    },
+    "nvme_smart_health_information_log": {
+     "available_spare": 100,
+     "available_spare_threshold": 5,
+     "controller_busy_time": 545,
+     "critical_comp_time": 0,
+     "critical_warning": 0,
+     "data_units_read": 59671167,
+     "data_units_written": 51453610,
+     "host_reads": 747686694,
+     "host_writes": 930779480,
+     "media_errors": 0,
+     "nsid": -1,
+     "num_err_log_entries": 0,
+     "percentage_used": 7,
+     "power_cycles": 1357,
+     "power_on_hours": 8499,
+     "temperature": 38,
+     "temperature_sensors": [
+      38
+     ],
+     "unsafe_shutdowns": 51,
+     "warning_temp_time": 0
+    },
+    "power_on_time": {
+     "hours": 8499
+    },
+    "smart_status": {
+     "nvme": {
+      "value": 0
+     },
+     "passed": true
+    },
+    "smartctl": {
+     "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "nvme",
+      "/dev/sda",
+      "-j"
+     ],
+     "build_info": "(AppVeyor)",
+     "exit_status": 0,
+     "platform_info": "x86_64-w64-mingw32-w11-b26200",
+     "pre_release": false,
+     "svn_revision": "5714",
+     "version": [
+      7,
+      5
+     ]
+    },
+    "spare_available": {
+     "current_percent": 100,
+     "threshold_percent": 5
+    },
+    "temperature": {
+     "critical_limit_max": 85,
+     "current": 38,
+     "op_limit_max": 83
+    }
+   },
+   "1": {
+    "device": {
+     "info_name": "/dev/sdb",
+     "name": "/dev/sdb",
+     "protocol": "NVMe",
+     "type": "nvme"
+    },
+    "endurance_used": {
+     "current_percent": 5
+    },
+    "firmware_version": "P9CR413",
+    "model_name": "CT1000P3PSSD8",
+    "nvme_composite_temperature_threshold": {
+     "critical": 85,
+     "warning": 83
+    },
+    "nvme_smart_health_information_log": {
+     "available_spare": 100,
+     "available_spare_threshold": 5,
+     "controller_busy_time": 282,
+     "critical_comp_time": 0,
+     "critical_warning": 0,
+     "data_units_read": 77657932,
+     "data_units_written": 43630527,
+     "host_reads": 350587818,
+     "host_writes": 139812895,
+     "media_errors": 0,
+     "nsid": -1,
+     "num_err_log_entries": 0,
+     "percentage_used": 5,
+     "power_cycles": 1295,
+     "power_on_hours": 8347,
+     "temperature": 31,
+     "temperature_sensors": [
+      31
+     ],
+     "unsafe_shutdowns": 35,
+     "warning_temp_time": 0
+    },
+    "power_on_time": {
+     "hours": 8347
+    },
+    "smart_status": {
+     "nvme": {
+      "value": 0
+     },
+     "passed": true
+    },
+    "smartctl": {
+     "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "nvme",
+      "/dev/sdb",
+      "-j"
+     ],
+     "build_info": "(AppVeyor)",
+     "exit_status": 0,
+     "platform_info": "x86_64-w64-mingw32-w11-b26200",
+     "pre_release": false,
+     "svn_revision": "5714",
+     "version": [
+      7,
+      5
+     ]
+    },
+    "spare_available": {
+     "current_percent": 100,
+     "threshold_percent": 5
+    },
+    "temperature": {
+     "critical_limit_max": 85,
+     "current": 31,
+     "op_limit_max": 83
+    }
+   }
+  },
+  "status": "ok",
+  "version": null
+ },
+ "Volumes": [
+  {
+   "DriveLetter": "D",
+   "FileSystem": "NTFS",
+   "HealthStatus": "Healthy",
+   "Label": "",
+   "Size": 1000187359232,
+   "SizeRemaining": 236558819328
+  },
+  {
+   "DriveLetter": "C",
+   "FileSystem": "NTFS",
+   "HealthStatus": "Healthy",
+   "Label": "",
+   "Size": 999120957440,
+   "SizeRemaining": 774976839680
+  }
+ ]
+}

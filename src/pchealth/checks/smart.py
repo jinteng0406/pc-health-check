@@ -11,8 +11,10 @@ import subprocess
 from pathlib import Path
 
 CREATE_NO_WINDOW = 0x08000000
-# 不保存可識別硬碟本身的資訊（序號等），匯出資料時也就不會外流
-PRIVATE_KEYS = ("serial_number", "wwn", "logical_unit_id", "nvme_eui64")
+# 只保留判斷需要的欄位：資料量小，也不會留下序號、EUI-64 等可識別硬碟本身的資訊
+KEEP_KEYS = ("device", "model_name", "firmware_version", "smart_status", "smartctl",
+             "nvme_smart_health_information_log", "nvme_composite_temperature_threshold",
+             "ata_smart_attributes", "temperature", "power_on_time", "endurance_used", "spare_available")
 
 
 def find_smartctl() -> Path | None:
@@ -46,8 +48,13 @@ def _run(exe: Path, args: list[str], timeout: int = 30) -> dict | None:
         return None
     if not isinstance(data, dict):
         return None
-    for key in PRIVATE_KEYS:
-        data.pop(key, None)
+    data = {k: v for k, v in data.items() if k in KEEP_KEYS}
+    if isinstance(data.get("smartctl"), dict):
+        data["smartctl"] = {k: data["smartctl"].get(k) for k in ("version", "exit_status")}
+    if isinstance(data.get("ata_smart_attributes"), dict):
+        data["ata_smart_attributes"] = {"table": [
+            {"id": a.get("id"), "name": a.get("name"), "raw": {"value": (a.get("raw") or {}).get("value")}}
+            for a in data["ata_smart_attributes"].get("table") or []]}
     return data
 
 
@@ -63,7 +70,6 @@ def collect(disks: list[dict], admin: bool) -> dict:
     exe = find_smartctl()
     if not exe:
         return {"status": "not_found", "disks": {}}
-    version = (_run(exe, ["--version"]) or {}).get("smartctl", {}).get("version")
     results = {}
     for d in disks:
         try:
@@ -77,4 +83,6 @@ def collect(disks: list[dict], admin: bool) -> dict:
             if has_health(data):
                 results[str(d["DeviceId"])] = data
                 break
-    return {"status": "ok", "version": version and ".".join(map(str, version)), "disks": results}
+    version = next((d["smartctl"].get("version") for d in results.values()
+                    if isinstance(d.get("smartctl"), dict)), None)
+    return {"status": "ok", "version": ".".join(map(str, version)) if version else None, "disks": results}

@@ -30,6 +30,26 @@ def test_storage_no_false_alarms():
     assert len(fs) == 4  # 2 顆硬碟 + C:、D:
 
 
+def load_smart(name):
+    return json.loads((DATA.parent / "home_smart" / f"{name}.json").read_text(encoding="utf-8"))
+
+
+def test_v03_smartctl_through_intel_vmd():
+    """v0.3 在家實測：smartctl 讀得到兩顆硬碟，磨損以 smartctl 為準（Windows 誤報 0%）。"""
+    disks = {f.id.split(":")[3]: f for f in StorageCheck().analyze(load_smart("storage"), {}) if ":disk:" in f.id}
+    assert all(f.severity == Severity.OK for f in disks.values())
+    assert "磨損 7%" in disks["0"].title and "通電 8,499 小時" in disks["0"].title
+    assert "磨損 5%" in disks["1"].title
+    assert "錯誤次數未知" not in disks["0"].title
+    assert "警戒溫度 83°C" in disks["0"].detail and "警戒以上 0 分鐘" in disks["0"].detail
+
+
+def test_v03_gpu_full_speed_x8():
+    from pchealth.checks.gpu import NvidiaCheck
+    [f] = NvidiaCheck().analyze(load_smart("gpu"), {})
+    assert f.severity == Severity.OK and "PCIe x8" in f.title and "16.0 GB" in f.detail
+
+
 def test_storage_unknown_error_count_is_not_presented_as_zero():
     disks = [f for f in StorageCheck().analyze(load("storage"), {}) if ":disk:" in f.id]
     for f in disks:
