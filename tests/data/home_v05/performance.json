@@ -1,0 +1,140 @@
+{
+ "FreeMemoryKB": 10667756,
+ "PowerScheme": "29adb74c-fd0b-4367-9f64-e8e81d4cd609",
+ "PowerSchemeName": "Ultimate Performance (ExitLag)",
+ "Startup": [
+  {
+   "Enabled": false,
+   "Location": "Startup",
+   "Name": "app01"
+  },
+  {
+   "Enabled": false,
+   "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+   "Name": "OneDrive"
+  },
+  {
+   "Enabled": true,
+   "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+   "Name": "app02"
+  },
+  {
+   "Enabled": false,
+   "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+   "Name": "app03"
+  },
+  {
+   "Enabled": true,
+   "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+   "Name": "app04"
+  },
+  {
+   "Enabled": true,
+   "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+   "Name": "app05"
+  },
+  {
+   "Enabled": true,
+   "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+   "Name": "app06"
+  },
+  {
+   "Enabled": false,
+   "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+   "Name": "app07"
+  },
+  {
+   "Enabled": false,
+   "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+   "Name": "app08"
+  },
+  {
+   "Enabled": false,
+   "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+   "Name": "app09"
+  },
+  {
+   "Enabled": false,
+   "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+   "Name": "app10"
+  },
+  {
+   "Enabled": false,
+   "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+   "Name": "app11"
+  },
+  {
+   "Enabled": false,
+   "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+   "Name": "app12"
+  },
+  {
+   "Enabled": false,
+   "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+   "Name": "app13"
+  },
+  {
+   "Enabled": true,
+   "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+   "Name": "app14"
+  },
+  {
+   "Enabled": true,
+   "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+   "Name": "app15"
+  },
+  {
+   "Enabled": true,
+   "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+   "Name": "app16"
+  },
+  {
+   "Enabled": true,
+   "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+   "Name": "app17"
+  },
+  {
+   "Enabled": true,
+   "Location": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+   "Name": "SecurityHealth"
+  },
+  {
+   "Enabled": true,
+   "Location": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+   "Name": "app18"
+  },
+  {
+   "Enabled": false,
+   "Location": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+   "Name": "app19"
+  },
+  {
+   "Enabled": true,
+   "Location": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+   "Name": "app20"
+  }
+ ],
+ "TopProcesses": [
+  {
+   "MB": 1333,
+   "Name": "app04"
+  },
+  {
+   "MB": 623,
+   "Name": "explorer"
+  },
+  {
+   "MB": 600,
+   "Name": "app21"
+  },
+  {
+   "MB": 576,
+   "Name": "app22"
+  },
+  {
+   "MB": 558,
+   "Name": "app23"
+  }
+ ],
+ "TotalMemoryKB": 33363376
+}

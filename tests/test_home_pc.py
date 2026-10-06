@@ -76,6 +76,21 @@ def test_v04_security_and_performance_ok():
     assert all(f.severity == Severity.OK for f in perf)
 
 
+def load_v05(name):
+    return json.loads((DATA.parent / "home_v05" / f"{name}.json").read_text(encoding="utf-8"))
+
+
+def test_v05_sensors_without_pawnio_and_custom_power_plan():
+    """v0.5 在家實測：沒裝 PawnIO（使用者常玩 FACEIT）；電源計畫名稱含括號，由登錄檔備援取得。"""
+    from pchealth.checks.performance import PerformanceCheck
+    from pchealth.checks.sensors import SensorsCheck
+    sensors = {f.id: f for f in SensorsCheck().analyze(load_v05("sensors"), {})}
+    assert set(sensors) == {"sensors:no-driver", "sensors:no-limit"}
+    assert "FACEIT" in sensors["sensors:no-driver"].cause
+    perf = {f.id: f for f in PerformanceCheck().analyze(load_v05("performance"), {})}
+    assert perf["performance:power-ok"].title == "電源計畫：Ultimate Performance (ExitLag)（自訂）"
+
+
 def test_storage_unknown_error_count_is_not_presented_as_zero():
     disks = [f for f in StorageCheck().analyze(load("storage"), {}) if ":disk:" in f.id]
     for f in disks:
