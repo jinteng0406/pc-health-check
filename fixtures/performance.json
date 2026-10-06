@@ -1,0 +1,27 @@
+{
+  "Startup": [
+    {"Name": "Steam", "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", "Enabled": true},
+    {"Name": "Discord", "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", "Enabled": true},
+    {"Name": "EpicGamesLauncher", "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", "Enabled": true},
+    {"Name": "Battle.net", "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", "Enabled": true},
+    {"Name": "Spotify", "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", "Enabled": true},
+    {"Name": "OneDrive", "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", "Enabled": true},
+    {"Name": "MicrosoftEdgeAutoLaunch", "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", "Enabled": true},
+    {"Name": "Razer Synapse", "Location": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", "Enabled": true},
+    {"Name": "ArmouryCrate", "Location": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", "Enabled": true},
+    {"Name": "Voicemod", "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", "Enabled": true},
+    {"Name": "WallpaperEngine", "Location": "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", "Enabled": true},
+    {"Name": "Radmin VPN", "Location": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", "Enabled": true},
+    {"Name": "NVIDIA App", "Location": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", "Enabled": true},
+    {"Name": "RtkAudUService", "Location": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", "Enabled": true},
+    {"Name": "SecurityHealth", "Location": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", "Enabled": true},
+    {"Name": "Adobe Updater", "Location": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", "Enabled": false}
+  ],
+  "TotalMemoryKB": 33363376,
+  "FreeMemoryKB": 2201000,
+  "TopProcesses": [
+    {"Name": "chrome", "MB": 6120}, {"Name": "Cyberpunk2077", "MB": 9800}, {"Name": "Discord", "MB": 910},
+    {"Name": "Memory Compression", "MB": 1200}, {"Name": "Voicemod", "MB": 450}
+  ],
+  "PowerScheme": "a1841308-3541-4fab-bc81-f71556f20b4a"
+}

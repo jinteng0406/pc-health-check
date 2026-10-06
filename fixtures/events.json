@@ -1,0 +1,43 @@
+{
+  "Days": 30,
+  "Now": "2026-10-06T22:00:00",
+  "KernelPower": [
+    {"Time": "2026-10-02T21:14:03", "Id": 41, "Provider": "Microsoft-Windows-Kernel-Power",
+     "Data": {"BugcheckCode": "278", "PowerButtonTimestamp": "0", "LongPowerButtonPressDetected": "false"}},
+    {"Time": "2026-09-27T23:40:51", "Id": 41, "Provider": "Microsoft-Windows-Kernel-Power",
+     "Data": {"BugcheckCode": "278", "PowerButtonTimestamp": "0", "LongPowerButtonPressDetected": "false"}},
+    {"Time": "2026-09-20T15:02:11", "Id": 41, "Provider": "Microsoft-Windows-Kernel-Power",
+     "Data": {"BugcheckCode": "0", "PowerButtonTimestamp": "0", "LongPowerButtonPressDetected": "false"}},
+    {"Time": "2026-09-15T01:22:40", "Id": 41, "Provider": "Microsoft-Windows-Kernel-Power",
+     "Data": {"BugcheckCode": "0", "PowerButtonTimestamp": "133712345678", "LongPowerButtonPressDetected": "true"}}
+  ],
+  "BugChecks": [
+    {"Time": "2026-10-02T21:14:30", "Id": 1001, "Provider": "Microsoft-Windows-WER-SystemErrorReporting",
+     "Data": {"param1": "0x00000116 (0xffffb40f1a2c3010, 0xfffff8065f3e2f40, 0xffffffffc000009a, 0x0000000000000004)", "param2": "C:\\Windows\\Minidump\\100226-11234-01.dmp"}},
+    {"Time": "2026-09-27T23:41:20", "Id": 1001, "Provider": "Microsoft-Windows-WER-SystemErrorReporting",
+     "Data": {"param1": "0x00000116 (0xffffb40f19cd2010, 0xfffff8065f3e2f40, 0xffffffffc000009a, 0x0000000000000004)", "param2": "C:\\Windows\\Minidump\\092726-10875-01.dmp"}}
+  ],
+  "UnexpectedOff": [],
+  "Whea": [
+    {"Time": "2026-10-01T10:00:00", "Id": 17, "Provider": "Microsoft-Windows-WHEA-Logger"},
+    {"Time": "2026-10-03T10:00:00", "Id": 17, "Provider": "Microsoft-Windows-WHEA-Logger"},
+    {"Time": "2026-10-05T10:00:00", "Id": 17, "Provider": "Microsoft-Windows-WHEA-Logger"}
+  ],
+  "DisplayTdr": [
+    {"Time": "2026-10-02T21:13:58", "Id": 4101, "Provider": "Display"},
+    {"Time": "2026-09-27T23:40:40", "Id": 4101, "Provider": "Display"}
+  ],
+  "DiskErrors": [
+    {"Time": "2026-09-30T12:00:00", "Id": 153, "Provider": "disk"}
+  ],
+  "NtfsErrors": [],
+  "NvmeErrors": [],
+  "AppCrashes": [
+    {"Time": "2026-10-04T20:00:00", "App": "Cyberpunk2077.exe"},
+    {"Time": "2026-10-03T20:00:00", "App": "Cyberpunk2077.exe"},
+    {"Time": "2026-10-02T21:13:50", "App": "Cyberpunk2077.exe"},
+    {"Time": "2026-09-27T23:40:30", "App": "Cyberpunk2077.exe"},
+    {"Time": "2026-09-25T09:00:00", "App": "chrome.exe"}
+  ],
+  "Minidumps": ["2026-10-02T21:14:20", "2026-09-27T23:41:10"]
+}

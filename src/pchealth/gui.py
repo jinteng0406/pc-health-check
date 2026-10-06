@@ -67,7 +67,7 @@ class MainWindow(QMainWindow):
         self.demo, self.admin = demo, admin
         self.report: dict | None = None
         self.setWindowTitle(f"{APP_NAME} v{__version__}" + ("（假資料模式）" if demo else ""))
-        self.resize(1000, 640)
+        self.resize(1050, 780)
 
         self.run_btn = QPushButton("開始檢查")
         self.run_btn.setMinimumHeight(34)
@@ -233,8 +233,9 @@ class MainWindow(QMainWindow):
 
     def open_link(self, url: QUrl):
         if url.scheme() == "run":
+            target, _, args = url.path().partition(" ")  # 例如 "perfmon.exe /rel"
             try:
-                os.startfile(url.path())
+                os.startfile(target, arguments=args) if args else os.startfile(target)
             except OSError as e:
                 QMessageBox.warning(self, APP_NAME, f"無法開啟：{e}")
         else:

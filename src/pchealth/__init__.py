@@ -1,5 +1,5 @@
 """PC Health Check：家用電腦健康檢查工具。"""
 
-__version__ = "0.3.0"
+__version__ = "0.4.0"
 APP_NAME = "PC Health Check"
 GITHUB_REPO = "jinteng0406/pc-health-check"

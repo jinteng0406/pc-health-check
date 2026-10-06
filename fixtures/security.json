@@ -1,0 +1,16 @@
+{
+  "Now": "2026-10-06T22:00:00",
+  "History": [
+    {"Date": "2026-10-06T09:46:46", "Title": "安全情報更新 Microsoft Defender Antivirus - KB2267602 (版本 1.459.565.0) - 目前通道 (廣泛)", "Result": 2, "HResult": "0x00000000"},
+    {"Date": "2026-10-01T03:12:00", "Title": "2026-09 x64 型 Windows 11 Version 25H2 累積更新 (KB5099999)", "Result": 4, "HResult": "0x800F0922"},
+    {"Date": "2026-09-28T03:12:00", "Title": "2026-09 x64 型 Windows 11 Version 25H2 累積更新 (KB5099999)", "Result": 4, "HResult": "0x800F0922"},
+    {"Date": "2026-09-20T06:20:01", "Title": "9NRZT3Q9R3DL-Microsoft.WindowsAppRuntime.2", "Result": 2, "HResult": "0x00000000"},
+    {"Date": "2026-08-14T03:00:00", "Title": "2026-08 x64 型 Windows 11 Version 25H2 累積更新 (KB5088888)", "Result": 2, "HResult": "0x00000000"}
+  ],
+  "RebootPending": true,
+  "Defender": {
+    "AMServiceEnabled": true, "AntivirusEnabled": true, "RealTimeProtectionEnabled": true,
+    "SignatureLastUpdated": "2026-10-06T09:46:00", "AMRunningMode": "Normal"
+  },
+  "Antivirus": [{"Name": "Windows Defender", "State": 397568}]
+}
