@@ -1,0 +1,47 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt -r requirements-dev.txt
+
+      - name: Test
+        run: python -m pytest -q
+
+      - name: Check tag matches version
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: pwsh
+        run: |
+          $v = python -c "import sys; sys.path.insert(0, 'src'); import pchealth; print(pchealth.__version__)"
+          if ("v$v" -ne "${{ github.ref_name }}") { throw "標籤 ${{ github.ref_name }} 與程式版本 $v 不符" }
+
+      - name: Build exe
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: pwsh
+        run: |
+          ./build.ps1
+          Compress-Archive -Path dist/PCHealthCheck -DestinationPath "PCHealthCheck-${{ github.ref_name }}.zip"
+
+      - name: Publish release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: PCHealthCheck-${{ github.ref_name }}.zip
+          generate_release_notes: true
