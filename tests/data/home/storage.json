@@ -1,0 +1,57 @@
+{
+ "Admin": true,
+ "Disks": [
+  {
+   "BusType": "NVMe",
+   "DeviceId": "1",
+   "FriendlyName": "CT1000P3PSSD8",
+   "HealthStatus": "Healthy",
+   "MediaType": "SSD",
+   "OperationalStatus": "OK",
+   "Reliability": {
+    "PowerOnHours": null,
+    "ReadErrorsUncorrected": null,
+    "Temperature": 31,
+    "TemperatureMax": 83,
+    "Wear": 0,
+    "WriteErrorsUncorrected": null
+   },
+   "Size": 1000204886016
+  },
+  {
+   "BusType": "NVMe",
+   "DeviceId": "0",
+   "FriendlyName": "CT1000P3PSSD8",
+   "HealthStatus": "Healthy",
+   "MediaType": "SSD",
+   "OperationalStatus": "OK",
+   "Reliability": {
+    "PowerOnHours": null,
+    "ReadErrorsUncorrected": null,
+    "Temperature": 38,
+    "TemperatureMax": 83,
+    "Wear": 0,
+    "WriteErrorsUncorrected": null
+   },
+   "Size": 1000204886016
+  }
+ ],
+ "Volumes": [
+  {
+   "DriveLetter": "D",
+   "FileSystem": "NTFS",
+   "HealthStatus": "Healthy",
+   "Label": "",
+   "Size": 1000187359232,
+   "SizeRemaining": 236611698688
+  },
+  {
+   "DriveLetter": "C",
+   "FileSystem": "NTFS",
+   "HealthStatus": "Healthy",
+   "Label": "",
+   "Size": 999120957440,
+   "SizeRemaining": 774913638400
+  }
+ ]
+}

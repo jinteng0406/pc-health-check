@@ -65,13 +65,22 @@ class StorageCheck(Check):
         r = d.get("Reliability")
         info = [f"型號：{name}", f"類型：{kind}（{d.get('BusType')}）", f"容量：{gb(d.get('Size')):.0f} GB",
                 f"Windows 健康狀態：{d.get('HealthStatus')}／{d.get('OperationalStatus')}"]
+        errors_known = bool(r) and (r.get("ReadErrorsUncorrected") is not None
+                                    or r.get("WriteErrorsUncorrected") is not None)
         if r:
             if r.get("Wear") is not None:
                 info.append(f"磨損程度：{r['Wear']}%（已用掉的額定寫入壽命）")
             if r.get("Temperature"):
-                info.append(f"目前溫度：{r['Temperature']}°C" + (f"（最高紀錄 {r['TemperatureMax']}°C）" if r.get("TemperatureMax") else ""))
+                # NVMe 的 TemperatureMax 通常是硬碟自訂的警戒溫度，不一定是實際到過的最高溫
+                info.append(f"目前溫度：{r['Temperature']}°C"
+                            + (f"（硬碟回報的溫度上限值 {r['TemperatureMax']}°C）" if r.get("TemperatureMax") else ""))
             if r.get("PowerOnHours") is not None:
                 info.append(f"通電時數：{r['PowerOnHours']:,} 小時")
+            if errors_known:
+                errs = (r.get("ReadErrorsUncorrected") or 0) + (r.get("WriteErrorsUncorrected") or 0)
+                info.append(f"無法修復的讀寫錯誤：{errs} 次")
+            else:
+                info.append("無法修復的讀寫錯誤：此硬碟沒有透過 Windows 提供（未知，不代表沒有）")
         detail = "\n".join(info)
         out: list[Finding] = []
 
@@ -140,8 +149,13 @@ class StorageCheck(Check):
             summary = [f"磨損 {wear}%" if wear is not None else None,
                        f"{temp}°C" if temp else None,
                        f"通電 {r['PowerOnHours']:,} 小時" if r.get("PowerOnHours") is not None else None]
+            if not errors_known:
+                summary.append("錯誤次數未知")
             out.append(Finding(f"{key}:ok", Severity.OK,
-                               f"{name}：健康（{'、'.join(s for s in summary if s)}）", detail=detail))
+                               f"{name}：健康（{'、'.join(s for s in summary if s)}）", detail=detail,
+                               cause="" if errors_known else
+                               "Windows 只讀得到這顆硬碟的部分健康資訊；讀寫錯誤次數、備用區剩餘量等"
+                               "更完整的資訊需要專用工具（之後的版本會加入）。"))
         return out
 
     # ---- 磁碟區（C:、D: …）----
