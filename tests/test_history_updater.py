@@ -29,6 +29,20 @@ def test_load_latest_skips_corrupt_files(tmp_path):
     assert history.load_latest(tmp_path)["timestamp"] == "2026-10-01T10:00:00"
 
 
+def test_onedrive_picks_newest_newer_zip(tmp_path, monkeypatch):
+    monkeypatch.setattr(updater, "__version__", "0.2.0")
+    for name in ("PCHealthCheck-v0.1.0.zip", "PCHealthCheck-v0.3.0.zip", "PCHealthCheck-v0.10.0.zip",
+                 "PCHealthCheck-v9.zip.tmp", "other.zip"):
+        (tmp_path / name).write_bytes(b"")
+    monkeypatch.setattr(updater, "is_newer", lambda t, local="0.2.0": updater.parse_version(t) > (0, 2, 0))
+    assert updater.check_onedrive(tmp_path) == ("v0.10.0", tmp_path)
+
+
+def test_onedrive_nothing_newer(tmp_path):
+    (tmp_path / "PCHealthCheck-v0.0.1.zip").write_bytes(b"")
+    assert updater.check_onedrive(tmp_path) is None
+
+
 def test_version_compare():
     assert updater.is_newer("v0.2.0", "0.1.0")
     assert updater.is_newer("v0.10.0", "0.9.9")

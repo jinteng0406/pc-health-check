@@ -2,27 +2,167 @@
   "Admin": true,
   "Disks": [
     {
-      "DeviceId": "0", "FriendlyName": "CT1000P3PSSD8", "MediaType": "SSD", "BusType": "NVMe",
-      "Size": 1000204886016, "HealthStatus": "Healthy", "OperationalStatus": "OK",
-      "Reliability": {"Temperature": 41, "TemperatureMax": 68, "Wear": 3, "PowerOnHours": 2310,
-                      "ReadErrorsUncorrected": 0, "WriteErrorsUncorrected": 0}
+      "DeviceId": "0",
+      "FriendlyName": "CT1000P3PSSD8",
+      "MediaType": "SSD",
+      "BusType": "NVMe",
+      "Size": 1000204886016,
+      "HealthStatus": "Healthy",
+      "OperationalStatus": "OK",
+      "Reliability": {
+        "Temperature": 41,
+        "TemperatureMax": 68,
+        "Wear": 3,
+        "PowerOnHours": 2310,
+        "ReadErrorsUncorrected": 0,
+        "WriteErrorsUncorrected": 0
+      }
     },
     {
-      "DeviceId": "1", "FriendlyName": "Samsung SSD 860 EVO 500GB", "MediaType": "SSD", "BusType": "SATA",
-      "Size": 500107862016, "HealthStatus": "Warning", "OperationalStatus": "OK",
-      "Reliability": {"Temperature": 38, "TemperatureMax": 55, "Wear": 92, "PowerOnHours": 31877,
-                      "ReadErrorsUncorrected": 3, "WriteErrorsUncorrected": 0}
+      "DeviceId": "1",
+      "FriendlyName": "Samsung SSD 860 EVO 500GB",
+      "MediaType": "SSD",
+      "BusType": "SATA",
+      "Size": 500107862016,
+      "HealthStatus": "Warning",
+      "OperationalStatus": "OK",
+      "Reliability": {
+        "Temperature": 38,
+        "TemperatureMax": 55,
+        "Wear": 92,
+        "PowerOnHours": 31877,
+        "ReadErrorsUncorrected": 3,
+        "WriteErrorsUncorrected": 0
+      }
     },
     {
-      "DeviceId": "2", "FriendlyName": "CT1000P3PSSD8", "MediaType": "SSD", "BusType": "NVMe",
-      "Size": 1000204886016, "HealthStatus": "Healthy", "OperationalStatus": "OK",
-      "Reliability": {"Temperature": 76, "TemperatureMax": 81, "Wear": 1, "PowerOnHours": 905,
-                      "ReadErrorsUncorrected": 0, "WriteErrorsUncorrected": 0}
+      "DeviceId": "2",
+      "FriendlyName": "CT1000P3PSSD8",
+      "MediaType": "SSD",
+      "BusType": "NVMe",
+      "Size": 1000204886016,
+      "HealthStatus": "Healthy",
+      "OperationalStatus": "OK",
+      "Reliability": {
+        "Temperature": 76,
+        "TemperatureMax": 81,
+        "Wear": 1,
+        "PowerOnHours": 905,
+        "ReadErrorsUncorrected": 0,
+        "WriteErrorsUncorrected": 0
+      }
     }
   ],
   "Volumes": [
-    {"DriveLetter": "C", "Label": "", "FileSystem": "NTFS", "Size": 999559262208, "SizeRemaining": 6442450944, "HealthStatus": "Healthy"},
-    {"DriveLetter": "D", "Label": "遊戲", "FileSystem": "NTFS", "Size": 1000186310656, "SizeRemaining": 412316860416, "HealthStatus": "Healthy"},
-    {"DriveLetter": "E", "Label": "舊資料", "FileSystem": "NTFS", "Size": 500105216000, "SizeRemaining": 120259084288, "HealthStatus": "Warning"}
-  ]
+    {
+      "DriveLetter": "C",
+      "Label": "",
+      "FileSystem": "NTFS",
+      "Size": 999559262208,
+      "SizeRemaining": 6442450944,
+      "HealthStatus": "Healthy"
+    },
+    {
+      "DriveLetter": "D",
+      "Label": "遊戲",
+      "FileSystem": "NTFS",
+      "Size": 1000186310656,
+      "SizeRemaining": 412316860416,
+      "HealthStatus": "Healthy"
+    },
+    {
+      "DriveLetter": "E",
+      "Label": "舊資料",
+      "FileSystem": "NTFS",
+      "Size": 500105216000,
+      "SizeRemaining": 120259084288,
+      "HealthStatus": "Warning"
+    }
+  ],
+  "Smart": {
+    "status": "ok",
+    "version": "7.4",
+    "disks": {
+      "0": {
+        "device": {
+          "name": "/dev/sda",
+          "type": "nvme",
+          "protocol": "NVMe"
+        },
+        "model_name": "CT1000P3PSSD8",
+        "smart_status": {
+          "passed": true,
+          "nvme": {
+            "value": 0
+          }
+        },
+        "nvme_smart_health_information_log": {
+          "critical_warning": 0,
+          "temperature": 41,
+          "available_spare": 100,
+          "available_spare_threshold": 5,
+          "percentage_used": 3,
+          "power_on_hours": 2310,
+          "unsafe_shutdowns": 14,
+          "media_errors": 0,
+          "num_err_log_entries": 0
+        },
+        "temperature": {
+          "current": 41
+        },
+        "power_on_time": {
+          "hours": 2310
+        }
+      },
+      "1": {
+        "device": {
+          "name": "/dev/sdb",
+          "type": "sat",
+          "protocol": "ATA"
+        },
+        "model_name": "Samsung SSD 860 EVO 500GB",
+        "smart_status": {
+          "passed": true
+        },
+        "ata_smart_attributes": {
+          "table": [
+            {
+              "id": 5,
+              "name": "Reallocated_Sector_Ct",
+              "raw": {
+                "value": 24
+              }
+            },
+            {
+              "id": 9,
+              "name": "Power_On_Hours",
+              "raw": {
+                "value": 31877
+              }
+            },
+            {
+              "id": 187,
+              "name": "Reported_Uncorrect",
+              "raw": {
+                "value": 3
+              }
+            },
+            {
+              "id": 197,
+              "name": "Current_Pending_Sector",
+              "raw": {
+                "value": 2
+              }
+            }
+          ]
+        },
+        "temperature": {
+          "current": 38
+        },
+        "power_on_time": {
+          "hours": 31877
+        }
+      }
+    }
+  }
 }

@@ -52,12 +52,13 @@ class CheckWorker(QThread):
 
 
 class UpdateWorker(QThread):
-    found = Signal(str, str)
+    found = Signal(str, str, bool)  # 版本、連結、是否在 OneDrive
 
     def run(self):
-        latest = updater.check_latest()
-        if latest:
-            self.found.emit(*latest)
+        if local := updater.check_onedrive():
+            self.found.emit(local[0], QUrl.fromLocalFile(str(local[1])).toString(), True)
+        elif latest := updater.check_latest():
+            self.found.emit(latest[0], latest[1], False)
 
 
 class MainWindow(QMainWindow):
@@ -249,9 +250,11 @@ class MainWindow(QMainWindow):
             with open(path, "w", encoding="utf-8") as fp:
                 json.dump(self.report, fp, ensure_ascii=False, indent=2)
 
-    def on_update_found(self, tag: str, url: str):
+    def on_update_found(self, tag: str, url: str, onedrive: bool):
+        text = "已在 OneDrive，點此開啟資料夾" if onedrive else "點此下載"
         self.update_label.setText(
-            f"<a href='{html.escape(url)}' style='color:{COLORS[Severity.CRITICAL]}'>有新版本 {html.escape(tag)}，點此下載</a>")
+            f"<a href='{html.escape(url)}' style='color:{COLORS[Severity.CRITICAL]}'>"
+            f"有新版本 {html.escape(tag)}，{text}</a>")
 
 
 def _href(target: str) -> str:

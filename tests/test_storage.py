@@ -59,9 +59,74 @@ def test_no_reliability_without_admin_tells_user_to_accept_uac():
     assert f.severity == Severity.INFO and "UAC" in f.steps[0]
 
 
-def test_no_reliability_with_admin_mentions_vmd():
+def test_no_reliability_with_admin_mentions_controller():
     [f] = analyze([disk(Reliability=None)], admin=True)
-    assert "VMD" in f.cause
+    assert "RAID" in f.cause
+
+
+NVME_SMART = {"smart_status": {"passed": True},
+              "nvme_smart_health_information_log": {
+                  "critical_warning": 0, "temperature": 38, "available_spare": 100,
+                  "available_spare_threshold": 5, "percentage_used": 1, "power_on_hours": 1500,
+                  "unsafe_shutdowns": 12, "media_errors": 0},
+              "temperature": {"current": 38}, "power_on_time": {"hours": 1500}}
+
+
+def analyze_smart(smart_json, win_rel=None, **disk_kw):
+    d = disk(**disk_kw)
+    d["Reliability"] = win_rel
+    raw = {"Admin": True, "Disks": [d], "Volumes": [],
+           "Smart": {"status": "ok", "disks": {"0": smart_json}}}
+    return StorageCheck().analyze(raw, {})
+
+
+def test_smartctl_fills_the_unknown_error_count():
+    [f] = analyze_smart(NVME_SMART, {"Temperature": 38, "Wear": 0})
+    assert f.severity == Severity.OK
+    assert "錯誤次數未知" not in f.title and "通電 1,500 小時" in f.title
+    assert "資料來源：smartctl" in f.detail and "讀寫錯誤：0 次" in f.detail
+
+
+def test_smartctl_media_errors_and_critical_warning():
+    log = NVME_SMART["nvme_smart_health_information_log"] | {"media_errors": 7, "critical_warning": 0x04}
+    fs = analyze_smart(NVME_SMART | {"nvme_smart_health_information_log": log})
+    titles = " ".join(f.title for f in fs)
+    assert "7 次" in titles and "嚴重警告" in titles
+    assert all(f.severity == Severity.CRITICAL for f in fs)
+
+
+def test_temperature_only_critical_warning_is_warning():
+    log = NVME_SMART["nvme_smart_health_information_log"] | {"critical_warning": 0x02}
+    [f] = analyze_smart(NVME_SMART | {"nvme_smart_health_information_log": log})
+    assert f.severity == Severity.WARNING
+
+
+def test_low_spare():
+    log = NVME_SMART["nvme_smart_health_information_log"] | {"available_spare": 4}
+    assert analyze_smart(NVME_SMART | {"nvme_smart_health_information_log": log})[0].severity == Severity.CRITICAL
+
+
+def test_smart_failed_is_critical():
+    [f] = analyze_smart(NVME_SMART | {"smart_status": {"passed": False}})
+    assert f.severity == Severity.CRITICAL
+
+
+def test_ata_reallocated_and_pending():
+    ata = {"smart_status": {"passed": True}, "temperature": {"current": 35}, "power_on_time": {"hours": 20000},
+           "ata_smart_attributes": {"table": [{"id": 5, "raw": {"value": 8}}, {"id": 197, "raw": {"value": 1}}]}}
+    fs = analyze_smart(ata, MediaType="HDD", BusType="SATA")
+    sevs = {f.id.rsplit(":", 1)[1]: f.severity for f in fs}
+    assert sevs == {"pending": Severity.CRITICAL, "reallocated": Severity.WARNING}
+
+
+def test_smart_missing_values_fall_back_to_windows():
+    [f] = analyze_smart({"smart_status": {"passed": True}}, {"Temperature": 44, "Wear": 9})
+    assert "磨損 9%" in f.title and "44°C" in f.title
+
+
+def test_smartctl_disk_names():
+    from pchealth.checks.smart import device_name
+    assert [device_name(i) for i in (0, 1, 25, 26)] == ["/dev/sda", "/dev/sdb", "/dev/sdz", "/dev/sdaa"]
 
 
 def test_low_space_thresholds():
@@ -80,5 +145,6 @@ def test_tiny_partitions_ignored_and_dirty_volume_flagged():
 def test_demo_fixture_covers_scenarios():
     fs = StorageCheck().run(load_fixture("storage")).findings
     titles = " ".join(f.title for f in fs)
-    for expected in ("無法修復的讀寫錯誤", "額定寫入壽命", "溫度偏高", "空間不足", "需要修復", "健康"):
+    for expected in ("無法修復的讀寫錯誤", "額定寫入壽命", "溫度偏高", "空間不足", "需要修復", "健康",
+                     "讀不出來", "壞軌"):
         assert expected in titles

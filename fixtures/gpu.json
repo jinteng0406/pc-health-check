@@ -1,0 +1,13 @@
+{
+  "available": true,
+  "gpus": [
+    {
+      "name": "NVIDIA GeForce RTX 4060 Ti", "driver_version": "560.94",
+      "temperature.gpu": "68", "fan.speed": "0", "power.draw": "21.40", "power.limit": "165.00",
+      "utilization.gpu": "3", "memory.used": "1210", "memory.total": "8188",
+      "pcie.link.gen.current": "1", "pcie.link.gen.max": "4",
+      "pcie.link.width.current": "4", "pcie.link.width.max": "8",
+      "clock_reasons": "0x0000000000000001"
+    }
+  ]
+}
