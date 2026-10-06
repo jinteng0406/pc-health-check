@@ -1,0 +1,1858 @@
+[
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "喇叭 (4- HyperX QuadCast S)",
+  "PNPClass": "AudioEndpoint",
+  "PNPDeviceID": "SWD\\MMDEVAPI\\INST001",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "HID-compliant consumer control device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "HID\\VID_03F0&PID_0294&MI_03\\INST002",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "HID-compliant system controller",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "HID\\VID_1532&PID_00C0&MI_00&COL03&COL02\\INST003",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "Razer Viper V3 Pro",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "USB\\VID_1532&PID_00C0&MI_02\\INST004",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Razer Inc",
+  "Name": "HID-compliant consumer control device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "RZVIRTUAL\\VID_1532&PID_00C0&MI_00&COL03\\INST005",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard USB HUBs)",
+  "Name": "Generic USB Hub",
+  "PNPClass": "USB",
+  "PNPDeviceID": "USB\\VID_05E3&PID_0608\\INST006",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard USB HUBs)",
+  "Name": "Generic USB Hub",
+  "PNPClass": "USB",
+  "PNPDeviceID": "USB\\VID_05E3&PID_0608\\INST007",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "Motherboard resources",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0C02\\INST008",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "Motherboard resources",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0C02\\INST009",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "Motherboard resources",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0C02\\INST010",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "Motherboard resources",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0C02\\INST011",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "USB Input Device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "USB\\VID_0B05&PID_19AF&MI_02\\INST012",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Volume",
+  "PNPClass": "Volume",
+  "PNPDeviceID": "STORAGE\\VOLUME\\INST013",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Razer Inc",
+  "Name": "HID-compliant mouse",
+  "PNPClass": "Mouse",
+  "PNPDeviceID": "HID\\VID_1532&PID_00C1&MI_01&COL02\\INST014",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Razer Inc",
+  "Name": "HID-compliant consumer control device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "RZVIRTUAL\\VID_1532&PID_00C1&MI_00&COL03\\INST015",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Volume",
+  "PNPClass": "Volume",
+  "PNPDeviceID": "STORAGE\\VOLUME\\INST016",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Generic USB Audio)",
+  "Name": "HyperX QuadCast S",
+  "PNPClass": "MEDIA",
+  "PNPDeviceID": "USB\\VID_03F0&PID_0294&MI_00\\INST017",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "System Firmware",
+  "PNPClass": "Firmware",
+  "PNPDeviceID": "UEFI\\RES_{4F8693A5-E2E2-548C-A908-XXXXXXXXXXXX}\\INST018",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "MIDI 2.0 Service Tests",
+  "PNPClass": "SoftwareDevice",
+  "PNPDeviceID": "SWD\\MIDISRV\\INST019",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Resource Hub proxy device",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\MSFT8000\\INST020",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "ACPI Fan",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0C0B\\INST021",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "ACPI Fan",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0C0B\\INST022",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "ACPI Fan",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0C0B\\INST023",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "ACPI Fan",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0C0B\\INST024",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "ACPI Fan",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0C0B\\INST025",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "HID-compliant consumer control device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "HID\\VID_03F0&PID_028C&MI_01&COL01\\INST026",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel Corporation",
+  "Name": "Intel(R) Serial IO I2C Host Controller - 7A4E",
+  "PNPClass": "System",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_7A4E&SUBSYS_88821043&REV_11\\INST027",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "ACPI Processor Aggregator",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\ACPI000C\\INST028",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "WinUsb Device",
+  "Name": "AURA LED Controller",
+  "PNPClass": "USBDevice",
+  "PNPDeviceID": "USB\\VID_0B05&PID_19AF&MI_00\\INST029",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "根列印佇列",
+  "PNPClass": "PrintQueue",
+  "PNPDeviceID": "SWD\\PRINTENUM\\INST030",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Razer Inc",
+  "Name": "Razer Viper V3 Pro",
+  "PNPClass": "Mouse",
+  "PNPDeviceID": "HID\\VID_1532&PID_00C0&MI_00\\INST031",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard USB Host Controller)",
+  "Name": "USB Composite Device",
+  "PNPClass": "USB",
+  "PNPDeviceID": "USB\\VID_41E4&PID_2132\\INST032",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "HID-compliant device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "HID\\VID_1532&PID_00C0&MI_01&COL04\\INST033",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Volume Manager",
+  "PNPClass": "System",
+  "PNPDeviceID": "ROOT\\VOLMGR\\INST034",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Realtek Semiconductor Corp.",
+  "Name": "Realtek 8821CU Wireless LAN 802.11ac USB NIC",
+  "PNPClass": "Net",
+  "PNPDeviceID": "USB\\VID_0BDA&PID_C820&MI_02\\INST035",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Device Firmware",
+  "PNPClass": "Firmware",
+  "PNPDeviceID": "UEFI\\RES_{00000000-0000-0000-0000-XXXXXXXXXXXX}\\INST036",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "INTEL",
+  "Name": "Intel(R) PCI Express Root Port #3 - 7A3A",
+  "PNPClass": "System",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_7A3A&SUBSYS_88821043&REV_11\\INST037",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "WAN Miniport (PPPOE)",
+  "PNPClass": "Net",
+  "PNPDeviceID": "SWD\\MSRRAS\\INST038",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard USB Host Controller)",
+  "Name": "USB Composite Device",
+  "PNPClass": "USB",
+  "PNPDeviceID": "USB\\VID_0BDA&PID_C820\\INST039",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "INTEL",
+  "Name": "Intel(R) PEG10 - 460D",
+  "PNPClass": "System",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_460D&SUBSYS_88821043&REV_02\\INST040",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard display types)",
+  "Name": "Microsoft Basic Display Driver",
+  "PNPClass": "System",
+  "PNPDeviceID": "ROOT\\BASICDISPLAY\\INST041",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "Razer Viper V3 Pro",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "USB\\VID_1532&PID_00C1&MI_02\\INST042",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Razer Inc",
+  "Name": "Razer Viper V3 Pro - LWI Wizard",
+  "PNPClass": "SoftwareComponent",
+  "PNPDeviceID": "SWD\\DRIVERENUM\\INST043",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "ACPI Sleep Button",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0C0E\\INST044",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard USB Host Controller)",
+  "Name": "USB Composite Device",
+  "PNPClass": "USB",
+  "PNPDeviceID": "USB\\VID_03F0&PID_028C\\INST045",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Microsoft Hypervisor Service",
+  "PNPClass": "System",
+  "PNPDeviceID": "ROOT\\HVSERVICE\\INST046",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard USB Host Controller)",
+  "Name": "USB Composite Device",
+  "PNPClass": "USB",
+  "PNPDeviceID": "USB\\VID_03F0&PID_0294\\INST047",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard keyboards)",
+  "Name": "HID Keyboard Device",
+  "PNPClass": "Keyboard",
+  "PNPDeviceID": "HID\\VID_41E4&PID_2132&MI_00\\INST048",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Razer Inc",
+  "Name": "Razer Control Device",
+  "PNPClass": "Razer Device",
+  "PNPDeviceID": "RZCONTROL\\VID_1532&PID_00C0&MI_00\\INST049",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Famatech",
+  "Name": "Famatech Radmin VPN Ethernet Adapter",
+  "PNPClass": "Net",
+  "PNPDeviceID": "ROOT\\NET\\INST050",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "ACPI Thermal Zone",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\THERMALZONE\\INST051",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Microsoft Windows Management Interface for ACPI",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0C14\\INST052",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Device Firmware",
+  "PNPClass": "Firmware",
+  "PNPDeviceID": "UEFI\\RES_{86A885EE-D71E-2ED6-0FC1-XXXXXXXXXXXX}\\INST053",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Wi-Fi",
+  "PNPClass": "SoftwareDevice",
+  "PNPDeviceID": "SWD\\RADIO\\INST054",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Microsoft RRAS Root Enumerator",
+  "PNPClass": "SoftwareDevice",
+  "PNPDeviceID": "SWD\\MSRRAS\\INST055",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "HID-compliant wireless radio controls",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "HID\\VID_41E4&PID_2132&MI_02&COL05\\INST056",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "藍牙",
+  "PNPClass": "SoftwareDevice",
+  "PNPDeviceID": "SWD\\RADIO\\INST057",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "HID-compliant system controller",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "HID\\VID_41E4&PID_2132&MI_02&COL04\\INST058",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard disk drives)",
+  "Name": "CT1000P3PSSD8",
+  "PNPClass": "DiskDrive",
+  "PNPDeviceID": "SCSI\\DISK&VEN_NVME&PROD_CT1000P3PSSD8\\INST059",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "WAN Miniport (PPTP)",
+  "PNPClass": "Net",
+  "PNPDeviceID": "SWD\\MSRRAS\\INST060",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "INTEL",
+  "Name": "Intel(R) Host Bridge/DRAM Registers - 4648",
+  "PNPClass": "System",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_4648&SUBSYS_88821043&REV_02\\INST061",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "HID-compliant consumer control device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "HID\\VID_1532&PID_00C1&MI_01&COL03\\INST062",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Microsoft Hyper-V Virtualization Infrastructure Driver",
+  "PNPClass": "System",
+  "PNPDeviceID": "ROOT\\VID\\INST063",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "HID-compliant consumer control device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "HID\\VID_41E4&PID_2132&MI_02&COL03\\INST064",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "High precision event timer",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0103\\INST065",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "Motherboard resources",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0C02\\INST066",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "System timer",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0100\\INST067",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "WAN Miniport (IKEv2)",
+  "PNPClass": "Net",
+  "PNPDeviceID": "SWD\\MSRRAS\\INST068",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Composite Bus Enumerator",
+  "PNPClass": "System",
+  "PNPDeviceID": "ROOT\\COMPOSITEBUS\\INST069",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "HID-compliant vendor-defined device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "HID\\VID_03F0&PID_028C&MI_01&COL02\\INST070",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Microsoft Virtual Drive Enumerator",
+  "PNPClass": "System",
+  "PNPDeviceID": "ROOT\\VDRVROOT\\INST071",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Razer Inc",
+  "Name": "Razer Viper V3 Pro",
+  "PNPClass": "Mouse",
+  "PNPDeviceID": "HID\\VID_1532&PID_00C1&MI_00\\INST072",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "HID-compliant mouse",
+  "PNPClass": "Mouse",
+  "PNPDeviceID": "HID\\VID_41E4&PID_2132&MI_02&COL02\\INST073",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Microsoft Storage Spaces Controller",
+  "PNPClass": "SCSIAdapter",
+  "PNPDeviceID": "ROOT\\SPACEPORT\\INST074",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard keyboards)",
+  "Name": "HID Keyboard Device",
+  "PNPClass": "Keyboard",
+  "PNPDeviceID": "HID\\VID_41E4&PID_2132&MI_02&COL01\\INST075",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "HID-compliant device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "HID\\VID_1532&PID_00C0&MI_01&COL05\\INST076",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard monitor types)",
+  "Name": "Generic Monitor (MAG 274QF X24)",
+  "PNPClass": "Monitor",
+  "PNPDeviceID": "DISPLAY\\MSI5CE4\\INST077",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Service Test Loopback A",
+  "PNPClass": "SoftwareDevice",
+  "PNPDeviceID": "SWD\\MIDISRV\\INST078",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Service Test Loopback B",
+  "PNPClass": "SoftwareDevice",
+  "PNPDeviceID": "SWD\\MIDISRV\\INST079",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard port types)",
+  "Name": "通訊連接埠 (COM1)",
+  "PNPClass": "Ports",
+  "PNPDeviceID": "ACPI\\PNP0501\\INST080",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Microsoft Kernel Debug Network Adapter",
+  "PNPClass": "Net",
+  "PNPDeviceID": "ROOT\\KDNIC\\INST081",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Generic volume shadow copy",
+  "PNPClass": "VolumeSnapshot",
+  "PNPDeviceID": "STORAGE\\VOLUMESNAPSHOT\\INST082",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Generic volume shadow copy",
+  "PNPClass": "VolumeSnapshot",
+  "PNPDeviceID": "STORAGE\\VOLUMESNAPSHOT\\INST083",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Generic volume shadow copy",
+  "PNPClass": "VolumeSnapshot",
+  "PNPDeviceID": "STORAGE\\VOLUMESNAPSHOT\\INST084",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Generic volume shadow copy",
+  "PNPClass": "VolumeSnapshot",
+  "PNPDeviceID": "STORAGE\\VOLUMESNAPSHOT\\INST085",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Generic volume shadow copy",
+  "PNPClass": "VolumeSnapshot",
+  "PNPDeviceID": "STORAGE\\VOLUMESNAPSHOT\\INST086",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Generic volume shadow copy",
+  "PNPClass": "VolumeSnapshot",
+  "PNPDeviceID": "STORAGE\\VOLUMESNAPSHOT\\INST087",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Generic volume shadow copy",
+  "PNPClass": "VolumeSnapshot",
+  "PNPDeviceID": "STORAGE\\VOLUMESNAPSHOT\\INST088",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel",
+  "Name": "Intel(R) iCLS Client",
+  "PNPClass": "SoftwareComponent",
+  "PNPDeviceID": "SWD\\DRIVERENUM\\INST089",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Microsoft Windows Management Interface for ACPI",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0C14\\INST090",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Razer Inc",
+  "Name": "HID Keyboard Device",
+  "PNPClass": "Keyboard",
+  "PNPDeviceID": "HID\\VID_1532&PID_00C1&MI_02\\INST091",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Realtek",
+  "Name": "Realtek Gaming 2.5GbE Family Controller",
+  "PNPClass": "Net",
+  "PNPDeviceID": "PCI\\VEN_10EC&DEV_8125&SUBSYS_87D71043&REV_05\\INST092",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "High Definition Audio Controller",
+  "PNPClass": "System",
+  "PNPDeviceID": "PCI\\VEN_10DE&DEV_22BD&SUBSYS_41131458&REV_A1\\INST093",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "INTEL",
+  "Name": "Intel(R) Shared SRAM - 7A27",
+  "PNPClass": "System",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_7A27&SUBSYS_88821043&REV_11\\INST094",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "INTEL",
+  "Name": "Intel(R) PCI Express Root Port #9 - 7A30",
+  "PNPClass": "System",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_7A30&SUBSYS_88821043&REV_11\\INST095",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Razer Inc",
+  "Name": "HID Keyboard Device",
+  "PNPClass": "Keyboard",
+  "PNPDeviceID": "HID\\VID_1532&PID_00C0&MI_02\\INST096",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel Corporation",
+  "Name": "Intel(R) Serial IO I2C Host Controller - 7A4D",
+  "PNPClass": "System",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_7A4D&SUBSYS_88821043&REV_11\\INST097",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "HID-compliant system controller",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "HID\\VID_1532&PID_00C1&MI_01&COL04\\INST098",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel",
+  "Name": "12th Gen Intel(R) Core(TM) i5-12600KF",
+  "PNPClass": "Processor",
+  "PNPDeviceID": "ACPI\\GENUINEINTEL_-_INTEL64_FAMILY_6_MODEL_151_-_12TH_GEN_INTEL(R)_CORE(TM)_I5-12600KF\\INST099",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel",
+  "Name": "12th Gen Intel(R) Core(TM) i5-12600KF",
+  "PNPClass": "Processor",
+  "PNPDeviceID": "ACPI\\GENUINEINTEL_-_INTEL64_FAMILY_6_MODEL_151_-_12TH_GEN_INTEL(R)_CORE(TM)_I5-12600KF\\INST100",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel",
+  "Name": "12th Gen Intel(R) Core(TM) i5-12600KF",
+  "PNPClass": "Processor",
+  "PNPDeviceID": "ACPI\\GENUINEINTEL_-_INTEL64_FAMILY_6_MODEL_151_-_12TH_GEN_INTEL(R)_CORE(TM)_I5-12600KF\\INST101",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel",
+  "Name": "12th Gen Intel(R) Core(TM) i5-12600KF",
+  "PNPClass": "Processor",
+  "PNPDeviceID": "ACPI\\GENUINEINTEL_-_INTEL64_FAMILY_6_MODEL_151_-_12TH_GEN_INTEL(R)_CORE(TM)_I5-12600KF\\INST102",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel",
+  "Name": "12th Gen Intel(R) Core(TM) i5-12600KF",
+  "PNPClass": "Processor",
+  "PNPDeviceID": "ACPI\\GENUINEINTEL_-_INTEL64_FAMILY_6_MODEL_151_-_12TH_GEN_INTEL(R)_CORE(TM)_I5-12600KF\\INST103",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel",
+  "Name": "12th Gen Intel(R) Core(TM) i5-12600KF",
+  "PNPClass": "Processor",
+  "PNPDeviceID": "ACPI\\GENUINEINTEL_-_INTEL64_FAMILY_6_MODEL_151_-_12TH_GEN_INTEL(R)_CORE(TM)_I5-12600KF\\INST104",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel",
+  "Name": "12th Gen Intel(R) Core(TM) i5-12600KF",
+  "PNPClass": "Processor",
+  "PNPDeviceID": "ACPI\\GENUINEINTEL_-_INTEL64_FAMILY_6_MODEL_151_-_12TH_GEN_INTEL(R)_CORE(TM)_I5-12600KF\\INST105",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel",
+  "Name": "12th Gen Intel(R) Core(TM) i5-12600KF",
+  "PNPClass": "Processor",
+  "PNPDeviceID": "ACPI\\GENUINEINTEL_-_INTEL64_FAMILY_6_MODEL_151_-_12TH_GEN_INTEL(R)_CORE(TM)_I5-12600KF\\INST106",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel",
+  "Name": "12th Gen Intel(R) Core(TM) i5-12600KF",
+  "PNPClass": "Processor",
+  "PNPDeviceID": "ACPI\\GENUINEINTEL_-_INTEL64_FAMILY_6_MODEL_151_-_12TH_GEN_INTEL(R)_CORE(TM)_I5-12600KF\\INST107",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel",
+  "Name": "12th Gen Intel(R) Core(TM) i5-12600KF",
+  "PNPClass": "Processor",
+  "PNPDeviceID": "ACPI\\GENUINEINTEL_-_INTEL64_FAMILY_6_MODEL_151_-_12TH_GEN_INTEL(R)_CORE(TM)_I5-12600KF\\INST108",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel",
+  "Name": "12th Gen Intel(R) Core(TM) i5-12600KF",
+  "PNPClass": "Processor",
+  "PNPDeviceID": "ACPI\\GENUINEINTEL_-_INTEL64_FAMILY_6_MODEL_151_-_12TH_GEN_INTEL(R)_CORE(TM)_I5-12600KF\\INST109",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel",
+  "Name": "12th Gen Intel(R) Core(TM) i5-12600KF",
+  "PNPClass": "Processor",
+  "PNPDeviceID": "ACPI\\GENUINEINTEL_-_INTEL64_FAMILY_6_MODEL_151_-_12TH_GEN_INTEL(R)_CORE(TM)_I5-12600KF\\INST110",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel",
+  "Name": "12th Gen Intel(R) Core(TM) i5-12600KF",
+  "PNPClass": "Processor",
+  "PNPDeviceID": "ACPI\\GENUINEINTEL_-_INTEL64_FAMILY_6_MODEL_151_-_12TH_GEN_INTEL(R)_CORE(TM)_I5-12600KF\\INST111",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel",
+  "Name": "12th Gen Intel(R) Core(TM) i5-12600KF",
+  "PNPClass": "Processor",
+  "PNPDeviceID": "ACPI\\GENUINEINTEL_-_INTEL64_FAMILY_6_MODEL_151_-_12TH_GEN_INTEL(R)_CORE(TM)_I5-12600KF\\INST112",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel",
+  "Name": "12th Gen Intel(R) Core(TM) i5-12600KF",
+  "PNPClass": "Processor",
+  "PNPDeviceID": "ACPI\\GENUINEINTEL_-_INTEL64_FAMILY_6_MODEL_151_-_12TH_GEN_INTEL(R)_CORE(TM)_I5-12600KF\\INST113",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel",
+  "Name": "12th Gen Intel(R) Core(TM) i5-12600KF",
+  "PNPClass": "Processor",
+  "PNPDeviceID": "ACPI\\GENUINEINTEL_-_INTEL64_FAMILY_6_MODEL_151_-_12TH_GEN_INTEL(R)_CORE(TM)_I5-12600KF\\INST114",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "UMBus Root Bus Enumerator",
+  "PNPClass": "System",
+  "PNPDeviceID": "ROOT\\UMBUS\\INST115",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Device Firmware",
+  "PNPClass": "Firmware",
+  "PNPDeviceID": "UEFI\\RES_{2FE2CBFC-B9AA-4A93-AB5B-XXXXXXXXXXXX}\\INST116",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard USB HUBs)",
+  "Name": "Generic USB Hub",
+  "PNPClass": "USB",
+  "PNPDeviceID": "USB\\VID_214B&PID_7250\\INST117",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "INTEL",
+  "Name": "Intel(R) PCI Express Root Port #1 - 7A38",
+  "PNPClass": "System",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_7A38&SUBSYS_88821043&REV_11\\INST118",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard USB Host Controller)",
+  "Name": "USB Composite Device",
+  "PNPClass": "USB",
+  "PNPDeviceID": "USB\\VID_0B05&PID_19AF\\INST119",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Microsoft Radio Device Enumeration Bus",
+  "PNPClass": "SoftwareDevice",
+  "PNPDeviceID": "SWD\\RADIO\\INST120",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "MSI G244F E2 (NVIDIA High Definition Audio)",
+  "PNPClass": "AudioEndpoint",
+  "PNPDeviceID": "SWD\\MMDEVAPI\\INST121",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel Corporation",
+  "Name": "Intel(R) Serial IO GPIO Host Controller - INTC1085",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\INTC1085\\INST122",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Generic volume shadow copy",
+  "PNPClass": "VolumeSnapshot",
+  "PNPDeviceID": "STORAGE\\VOLUMESNAPSHOT\\INST123",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Microsoft Device Association Root Enumerator",
+  "PNPClass": "SoftwareDevice",
+  "PNPDeviceID": "SWD\\MSDAS\\INST124",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard computers)",
+  "Name": "ACPI x64-based PC",
+  "PNPClass": "Computer",
+  "PNPDeviceID": "ROOT\\ACPI_HAL\\INST125",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard keyboards)",
+  "Name": "HID Keyboard Device",
+  "PNPClass": "Keyboard",
+  "PNPDeviceID": "HID\\VID_1532&PID_00C0&MI_01&COL01\\INST126",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Realtek",
+  "Name": "Realtek Hardware Support Application",
+  "PNPClass": "SoftwareComponent",
+  "PNPDeviceID": "SWD\\DRIVERENUM\\INST127",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Service Test Ping (Internal)",
+  "PNPClass": "SoftwareDevice",
+  "PNPDeviceID": "SWD\\MIDISRV\\INST128",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard monitor types)",
+  "Name": "Generic Monitor (MSI G244F E2)",
+  "PNPClass": "Monitor",
+  "PNPDeviceID": "DISPLAY\\MSI4BB4\\INST129",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "High Definition Audio Controller",
+  "PNPClass": "System",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_7A50&SUBSYS_87FB1043&REV_11\\INST130",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "WAN Miniport (Network Monitor)",
+  "PNPClass": "Net",
+  "PNPDeviceID": "SWD\\MSRRAS\\INST131",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "WAN Miniport (IP)",
+  "PNPClass": "Net",
+  "PNPDeviceID": "SWD\\MSRRAS\\INST132",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Microsoft Windows Management Interface for ACPI",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0C14\\INST133",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Microsoft Windows Management Interface for ACPI",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0C14\\INST134",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Microsoft Windows Management Interface for ACPI",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0C14\\INST135",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "PCI Express Root Complex",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0A08\\INST136",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Volume",
+  "PNPClass": "Volume",
+  "PNPDeviceID": "STORAGE\\VOLUME\\INST137",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "INTEL",
+  "Name": "Intel(R) SPI (flash) Controller - 7A24",
+  "PNPClass": "System",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_7A24&SUBSYS_88821043&REV_11\\INST138",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "ACPI Power Button",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0C0C\\INST139",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Microsoft ACPI-Compliant System",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI_HAL\\PNP0C08\\INST140",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": null,
+  "Name": null,
+  "PNPClass": null,
+  "PNPDeviceID": "HTREE\\ROOT\\INST141",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Microsoft Basic Render Driver",
+  "PNPClass": "System",
+  "PNPDeviceID": "ROOT\\BASICRENDER\\INST142",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Microsoft Print to PDF",
+  "PNPClass": "PrintQueue",
+  "PNPDeviceID": "SWD\\PRINTENUM\\INST143",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "OneNote (Desktop)",
+  "PNPClass": "PrintQueue",
+  "PNPDeviceID": "SWD\\PRINTENUM\\INST144",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "WAN Miniport (SSTP)",
+  "PNPClass": "Net",
+  "PNPDeviceID": "SWD\\MSRRAS\\INST145",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Realtek Digital Output (Realtek(R) Audio)",
+  "PNPClass": "AudioEndpoint",
+  "PNPDeviceID": "SWD\\MMDEVAPI\\INST146",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "USB Input Device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "USB\\VID_41E4&PID_2132&MI_02\\INST147",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Microsoft UEFI-Compliant System",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI_HAL\\UEFI\\INST148",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel",
+  "Name": "Intel(R) Management Engine WMI Provider",
+  "PNPClass": "SoftwareComponent",
+  "PNPDeviceID": "SWD\\DRIVERENUM\\INST149",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Device Firmware",
+  "PNPClass": "Firmware",
+  "PNPDeviceID": "UEFI\\RES_{7AA69739-8F78-41CB-BF44-XXXXXXXXXXXX}\\INST150",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Razer Inc",
+  "Name": "USB Input Device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "USB\\VID_1532&PID_00C0&MI_00\\INST151",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel",
+  "Name": "Intel(R) Dynamic Application Loader Host Interface",
+  "PNPClass": "SoftwareComponent",
+  "PNPDeviceID": "SWD\\DRIVERENUM\\INST152",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Microsoft Wi-Fi Direct Virtual Adapter",
+  "PNPClass": "Net",
+  "PNPDeviceID": "{5D624F94-8850-40C3-A3FA-XXXXXXXXXXXX}\\VWIFIMP_WFD\\INST153",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Microsoft Wi-Fi Direct Virtual Adapter #2",
+  "PNPClass": "Net",
+  "PNPDeviceID": "{5D624F94-8850-40C3-A3FA-XXXXXXXXXXXX}\\VWIFIMP_WFD\\INST154",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "USB Input Device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "USB\\VID_41E4&PID_2132&MI_01\\INST155",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard)",
+  "Name": "Trusted Platform Module 2.0",
+  "PNPClass": "SecurityDevices",
+  "PNPDeviceID": "ACPI\\MSFT0101\\INST156",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Standard NVM Express Controller",
+  "Name": "Standard NVM Express Controller",
+  "PNPClass": "SCSIAdapter",
+  "PNPDeviceID": "PCI\\VEN_1344&DEV_5416&SUBSYS_11001344&REV_01\\INST157",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "ACPI Fixed Feature Button",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\FIXEDBUTTON\\INST158",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "USB Input Device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "USB\\VID_41E4&PID_2132&MI_00\\INST159",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "HID-compliant device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "HID\\VID_1532&PID_00C1&MI_01&COL05\\INST160",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "HID-compliant vendor-defined device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "HID\\VID_0B05&PID_19AF&MI_02\\INST161",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "MAG 274QF X24 (NVIDIA High Definition Audio)",
+  "PNPClass": "AudioEndpoint",
+  "PNPDeviceID": "SWD\\MMDEVAPI\\INST162",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "HID-compliant system controller",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "HID\\VID_1532&PID_00C1&MI_00&COL03&COL02\\INST163",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Realtek",
+  "Name": "Realtek Audio Universal Service",
+  "PNPClass": "SoftwareComponent",
+  "PNPDeviceID": "SWD\\DRIVERENUM\\INST164",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "USB Input Device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "USB\\VID_03F0&PID_0294&MI_03\\INST165",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Generic USB xHCI Host Controller",
+  "Name": "Intel(R) USB 3.20 eXtensible Host Controller - 1.20 (Microsoft)",
+  "PNPClass": "USB",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_7A60&SUBSYS_88821043&REV_11\\INST166",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "ACPI Wake Alarm",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\ACPI000E\\INST167",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "HID-compliant consumer control device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "HID\\VID_1532&PID_00C1&MI_00&COL03&COL01\\INST168",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel Corporation",
+  "Name": "Intel RST VMD Controller 467F",
+  "PNPClass": "SCSIAdapter",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_467F&SUBSYS_88821043&REV_00\\INST169",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "Motherboard resources",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\INTC1099\\INST170",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "HID-compliant consumer control device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "HID\\VID_1532&PID_00C0&MI_01&COL02\\INST171",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "NVIDIA",
+  "Name": "NVIDIA GeForce RTX 4060 Ti",
+  "PNPClass": "Display",
+  "PNPDeviceID": "PCI\\VEN_10DE&DEV_2803&SUBSYS_41131458&REV_A1\\INST172",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel",
+  "Name": "Intel(R) Management Engine Interface #1",
+  "PNPClass": "System",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_7A68&SUBSYS_88821043&REV_11\\INST173",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "INTEL",
+  "Name": "Intel(R) LPC Controller/eSPI Controller - 7A04",
+  "PNPClass": "System",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_7A04&SUBSYS_88821043&REV_11\\INST174",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel Corporation",
+  "Name": "Intel(R) Power Engine Plug-in",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\INT33A1\\INST175",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Realtek Semiconductor Corp.",
+  "Name": "Realtek Bluetooth Adapter",
+  "PNPClass": "Bluetooth",
+  "PNPDeviceID": "USB\\VID_0BDA&PID_C820&MI_00\\INST176",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Dummy Output (Voicemod)",
+  "PNPClass": "AudioEndpoint",
+  "PNPDeviceID": "SWD\\MMDEVAPI\\INST177",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Realtek",
+  "Name": "Realtek(R) Audio",
+  "PNPClass": "MEDIA",
+  "PNPDeviceID": "HDAUDIO\\FUNC_01&VEN_10EC&DEV_0897&SUBSYS_104387FB&REV_1004\\INST178",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Razer Inc",
+  "Name": "Razer Viper V3 Pro - LWI Wizard",
+  "PNPClass": "SoftwareComponent",
+  "PNPDeviceID": "SWD\\DRIVERENUM\\INST179",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "耳機 (Realtek(R) Audio)",
+  "PNPClass": "AudioEndpoint",
+  "PNPDeviceID": "SWD\\MMDEVAPI\\INST180",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Volume",
+  "PNPClass": "Volume",
+  "PNPDeviceID": "STORAGE\\VOLUME\\INST181",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard disk drives)",
+  "Name": "CT1000P3PSSD8",
+  "PNPClass": "DiskDrive",
+  "PNPDeviceID": "SCSI\\DISK&VEN_NVME&PROD_CT1000P3PSSD8\\INST182",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "Motherboard resources",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0C02\\INST183",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel(R) Platform Monitoring Technology Device",
+  "Name": "Intel(R) Platform Monitoring Technology Driver",
+  "PNPClass": "System",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_467D&SUBSYS_88821043&REV_01\\INST184",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "NVIDIA",
+  "Name": "NVIDIA Virtual Audio Device (Wave Extensible) (WDM)",
+  "PNPClass": "MEDIA",
+  "PNPDeviceID": "ROOT\\UNNAMED_DEVICE\\INST185",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "MIDI 2.0 Virtual Devices",
+  "PNPClass": "SoftwareDevice",
+  "PNPDeviceID": "SWD\\MIDISRV\\INST186",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Xbox",
+  "Name": "Xvdd SCSI Miniport",
+  "PNPClass": "SCSIAdapter",
+  "PNPDeviceID": "SWD\\XVDDENUM\\INST187",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "ASUS System Product Name",
+  "PNPClass": "Computer",
+  "PNPDeviceID": "SWD\\COMPUTER\\INST188",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "MIDI 2.0 Loop Devices",
+  "PNPClass": "SoftwareDevice",
+  "PNPDeviceID": "SWD\\MIDISRV\\INST189",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Razer Inc",
+  "Name": "USB Input Device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "USB\\VID_1532&PID_00C1&MI_00\\INST190",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Microsoft GS Wavetable Synth",
+  "PNPClass": "SoftwareDevice",
+  "PNPDeviceID": "SWD\\MMDEVAPI\\INST191",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Razer Inc",
+  "Name": "Razer Control Device",
+  "PNPClass": "Razer Device",
+  "PNPDeviceID": "RZCONTROL\\VID_1532&PID_00C1&MI_00\\INST192",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "USB Input Device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "USB\\VID_03F0&PID_028C&MI_00\\INST193",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "INTEL",
+  "Name": "Intel(R) PEG60 - 464D",
+  "PNPClass": "System",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_464D&SUBSYS_88821043&REV_02\\INST194",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel Corporation",
+  "Name": "Intel(R) Serial IO I2C Host Controller - 7A4C",
+  "PNPClass": "System",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_7A4C&SUBSYS_88821043&REV_11\\INST195",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "NDIS Virtual Network Adapter Enumerator",
+  "PNPClass": "System",
+  "PNPDeviceID": "ROOT\\NDISVIRTUALBUS\\INST196",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "HID-compliant consumer control device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "HID\\VID_1532&PID_00C0&MI_00&COL03&COL01\\INST197",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Razer Inc",
+  "Name": "Razer Viper V3 Pro",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "USB\\VID_1532&PID_00C0&MI_01\\INST198",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "HID-compliant device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "HID\\VID_41E4&PID_2132&MI_01\\INST199",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "麥克風 (4- HyperX QuadCast S)",
+  "PNPClass": "AudioEndpoint",
+  "PNPDeviceID": "SWD\\MMDEVAPI\\INST200",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "INTEL",
+  "Name": "Intel(R) PCI Express Root Port #17 - 7A40",
+  "PNPClass": "System",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_7A40&SUBSYS_88821043&REV_11\\INST201",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Razer Inc",
+  "Name": "HID Keyboard Device",
+  "PNPClass": "Keyboard",
+  "PNPDeviceID": "HID\\VID_1532&PID_00C1&MI_01&COL01\\INST202",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "麥克風 (Voicemod)",
+  "PNPClass": "AudioEndpoint",
+  "PNPDeviceID": "SWD\\MMDEVAPI\\INST203",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "HID-compliant device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "HID\\VID_1532&PID_00C1&MI_01&COL06\\INST204",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "INTEL",
+  "Name": "Intel(R) PCI Express Root Port #25 - 7A48",
+  "PNPClass": "System",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_7A48&SUBSYS_88821043&REV_11\\INST205",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "HID-compliant vendor-defined device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "HID\\VID_03F0&PID_028C&MI_00\\INST206",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Volume",
+  "PNPClass": "Volume",
+  "PNPDeviceID": "STORAGE\\VOLUME\\INST207",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "HID-compliant system controller",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "HID\\VID_1532&PID_00C0&MI_01&COL03\\INST208",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard USB HUBs)",
+  "Name": "USB Root Hub (USB 3.0)",
+  "PNPClass": "USB",
+  "PNPDeviceID": "USB\\ROOT_HUB30\\INST209",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "INTEL",
+  "Name": "Intel(R) SMBus - 7A23",
+  "PNPClass": "System",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_7A23&SUBSYS_88821043&REV_11\\INST210",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "Microsoft System Management BIOS Driver",
+  "PNPClass": "System",
+  "PNPDeviceID": "ROOT\\MSSMBIOS\\INST211",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "Motherboard resources",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\INT340E\\INST212",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "NVIDIA",
+  "Name": "NVIDIA High Definition Audio",
+  "PNPClass": "MEDIA",
+  "PNPDeviceID": "HDAUDIO\\FUNC_01&VEN_10DE&DEV_00A6&SUBSYS_14584113&REV_1001\\INST213",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Standard SATA AHCI Controller",
+  "Name": "Standard SATA AHCI Controller",
+  "PNPClass": "HDC",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_7A62&SUBSYS_88821043&REV_11\\INST214",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Realtek",
+  "Name": "Realtek Asio Component",
+  "PNPClass": "SoftwareComponent",
+  "PNPDeviceID": "SWD\\DRIVERENUM\\INST215",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard USB Host Controller)",
+  "Name": "USB Composite Device",
+  "PNPClass": "USB",
+  "PNPDeviceID": "USB\\VID_1532&PID_00C1\\INST216",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Realtek",
+  "Name": "Realtek Audio Effects Component",
+  "PNPClass": "AudioProcessingObject",
+  "PNPDeviceID": "SWD\\DRIVERENUM\\INST217",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "INTEL",
+  "Name": "Intel(R) PCI Express Root Port #13 - 7A34",
+  "PNPClass": "System",
+  "PNPDeviceID": "PCI\\VEN_8086&DEV_7A34&SUBSYS_88821043&REV_11\\INST218",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "Plug and Play Software Device Enumerator",
+  "PNPClass": "System",
+  "PNPDeviceID": "ROOT\\SYSTEM\\INST219",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Volume",
+  "PNPClass": "Volume",
+  "PNPDeviceID": "STORAGE\\VOLUME\\INST220",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "Programmable interrupt controller",
+  "PNPClass": "System",
+  "PNPDeviceID": "ACPI\\PNP0000\\INST221",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Standard NVM Express Controller",
+  "Name": "Standard NVM Express Controller",
+  "PNPClass": "SCSIAdapter",
+  "PNPDeviceID": "PCI\\VEN_1344&DEV_5416&SUBSYS_11001344&REV_01\\INST222",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft Corporation",
+  "Name": "Voice Clarity",
+  "PNPClass": "AudioProcessingObject",
+  "PNPDeviceID": "SWD\\DRIVERENUM\\INST223",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Razer Inc",
+  "Name": "Razer Viper V3 Pro",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "USB\\VID_1532&PID_00C1&MI_01\\INST224",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard USB Host Controller)",
+  "Name": "USB Composite Device",
+  "PNPClass": "USB",
+  "PNPDeviceID": "USB\\VID_1532&PID_00C0\\INST225",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "Remote Desktop Device Redirector Bus",
+  "PNPClass": "System",
+  "PNPDeviceID": "ROOT\\RDPBUS\\INST226",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "WAN Miniport (IPv6)",
+  "PNPClass": "Net",
+  "PNPDeviceID": "SWD\\MSRRAS\\INST227",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "(Standard system devices)",
+  "Name": "USB Input Device",
+  "PNPClass": "HIDClass",
+  "PNPDeviceID": "USB\\VID_03F0&PID_028C&MI_01\\INST228",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "HALO INTERACTIVE PTE. LTD.",
+  "Name": "Dubbing Virtual Device",
+  "PNPClass": "MEDIA",
+  "PNPDeviceID": "ROOT\\MEDIA\\INST229",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Voicemod S.L.",
+  "Name": "Voicemod",
+  "PNPClass": "MEDIA",
+  "PNPDeviceID": "ROOT\\MEDIA\\INST230",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Microsoft",
+  "Name": "WAN Miniport (L2TP)",
+  "PNPClass": "Net",
+  "PNPDeviceID": "SWD\\MSRRAS\\INST231",
+  "Present": true
+ },
+ {
+  "ConfigManagerErrorCode": 0,
+  "Manufacturer": "Intel Corporation",
+  "Name": "Intel(R) Optane(TM) Memory and Storage Management Component",
+  "PNPClass": "SoftwareComponent",
+  "PNPDeviceID": "SWD\\DRIVERENUM\\INST232",
+  "Present": true
+ }
+]

@@ -1,0 +1,28 @@
+{
+  "Admin": true,
+  "Disks": [
+    {
+      "DeviceId": "0", "FriendlyName": "CT1000P3PSSD8", "MediaType": "SSD", "BusType": "NVMe",
+      "Size": 1000204886016, "HealthStatus": "Healthy", "OperationalStatus": "OK",
+      "Reliability": {"Temperature": 41, "TemperatureMax": 68, "Wear": 3, "PowerOnHours": 2310,
+                      "ReadErrorsUncorrected": 0, "WriteErrorsUncorrected": 0}
+    },
+    {
+      "DeviceId": "1", "FriendlyName": "Samsung SSD 860 EVO 500GB", "MediaType": "SSD", "BusType": "SATA",
+      "Size": 500107862016, "HealthStatus": "Warning", "OperationalStatus": "OK",
+      "Reliability": {"Temperature": 38, "TemperatureMax": 55, "Wear": 92, "PowerOnHours": 31877,
+                      "ReadErrorsUncorrected": 3, "WriteErrorsUncorrected": 0}
+    },
+    {
+      "DeviceId": "2", "FriendlyName": "CT1000P3PSSD8", "MediaType": "SSD", "BusType": "NVMe",
+      "Size": 1000204886016, "HealthStatus": "Healthy", "OperationalStatus": "OK",
+      "Reliability": {"Temperature": 76, "TemperatureMax": 81, "Wear": 1, "PowerOnHours": 905,
+                      "ReadErrorsUncorrected": 0, "WriteErrorsUncorrected": 0}
+    }
+  ],
+  "Volumes": [
+    {"DriveLetter": "C", "Label": "", "FileSystem": "NTFS", "Size": 999559262208, "SizeRemaining": 6442450944, "HealthStatus": "Healthy"},
+    {"DriveLetter": "D", "Label": "遊戲", "FileSystem": "NTFS", "Size": 1000186310656, "SizeRemaining": 412316860416, "HealthStatus": "Healthy"},
+    {"DriveLetter": "E", "Label": "舊資料", "FileSystem": "NTFS", "Size": 500105216000, "SizeRemaining": 120259084288, "HealthStatus": "Warning"}
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "Manufacturer": "ASUS",
+  "Model": "System Product Name",
+  "MemoryBytes": 34190917632,
+  "BoardManufacturer": "ASUSTeK COMPUTER INC.",
+  "BoardProduct": "TUF GAMING B760M-PLUS WIFI",
+  "BiosVersion": "0812",
+  "BiosDate": "2023-01-10",
+  "OsCaption": "Microsoft Windows 11 家用版",
+  "OsVersion": "10.0.26100",
+  "OsBuild": "26100",
+  "LastBoot": "2026-09-14T08:30:00",
+  "Now": "2026-10-06T22:00:00",
+  "Cpu": "12th Gen Intel(R) Core(TM) i5-12600KF",
+  "Gpus": [
+    {"Name": "NVIDIA GeForce RTX 4060 Ti", "DriverVersion": "32.0.15.6094", "DriverDate": "2025-08-20"}
+  ]
+}

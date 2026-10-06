@@ -6,7 +6,8 @@ import re
 from ..model import Action, Finding, Severity
 from ..powershell import run_ps_json
 from .base import Check
-from .error_codes import IGNORED_CODES, rule_for
+from .boards import board_support
+from .error_codes import IGNORED_CODES, UPDATE_DRIVER, rule_for
 
 OPEN_DEVMGMT = Action("開啟裝置管理員", "devmgmt.msc")
 
@@ -49,9 +50,9 @@ class DevicesCheck(Check):
     def collect(self) -> list[dict]:
         return run_ps_json(PS_SCRIPT)
 
-    def analyze(self, raw: list[dict]) -> list[Finding]:
+    def analyze(self, raw: list[dict], ctx: dict) -> list[Finding]:
         devices = [d for d in raw if d.get("Present", True) is not False]
-        findings = [self._finding(d, code) for d in devices
+        findings = [self._finding(d, code, ctx) for d in devices
                     if (code := d.get("ConfigManagerErrorCode") or 0) and code not in IGNORED_CODES]
         if not findings:
             findings.append(Finding(
@@ -59,18 +60,27 @@ class DevicesCheck(Check):
                 detail="裝置管理員中沒有任何裝置回報錯誤。"))
         return sorted(findings, key=lambda f: -f.severity)
 
-    def _finding(self, d: dict, code: int) -> Finding:
+    def _finding(self, d: dict, code: int, ctx: dict) -> Finding:
         rule = rule_for(code)
         pnp_id = d.get("PNPDeviceID") or ""
         name = d.get("Name") or "未知裝置"
         vendor = vendor_of(pnp_id)
         steps = list(rule.steps)
         actions = [OPEN_DEVMGMT]
-        if vendor in VENDOR_HINTS and rule.severity >= Severity.WARNING:
-            hint, action = VENDOR_HINTS[vendor]
-            steps.insert(0, hint)
-            if action:
-                actions.append(action)
+        if rule.severity >= Severity.WARNING:
+            # 主機板內建裝置（非獨立顯示卡）優先建議到主機板官網找驅動
+            board = board_support(ctx) if pnp_id.upper().startswith(("PCI", "ACPI", "HDAUDIO")) \
+                and vendor not in ("NVIDIA",) else None
+            if board:
+                steps = [s for s in steps if s != UPDATE_DRIVER]  # 已有更具體的主機板建議
+                steps.insert(0, board[0])
+                if board[1]:
+                    actions.append(board[1])
+            if vendor in VENDOR_HINTS and not (board and vendor == "Realtek"):
+                hint, action = VENDOR_HINTS[vendor]
+                steps.insert(1 if board else 0, hint)
+                if action:
+                    actions.append(action)
 
         info = [f"裝置名稱：{name}"]
         if d.get("PNPClass"):

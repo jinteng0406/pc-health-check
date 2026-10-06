@@ -1,0 +1,84 @@
+from pchealth.checks.storage import StorageCheck
+from pchealth.model import Severity
+from pchealth.runner import load_fixture
+
+GB = 1024**3
+
+
+def disk(**kw):
+    rel = {"Temperature": 40, "TemperatureMax": 60, "Wear": 2, "PowerOnHours": 1000,
+           "ReadErrorsUncorrected": 0, "WriteErrorsUncorrected": 0}
+    rel.update(kw.pop("rel", {}))
+    d = {"DeviceId": "0", "FriendlyName": "CT1000P3PSSD8", "MediaType": "SSD", "BusType": "NVMe",
+         "Size": 1000 * GB, "HealthStatus": "Healthy", "OperationalStatus": "OK", "Reliability": rel}
+    d.update(kw)
+    return d
+
+
+def vol(letter="C", size=1000, free=500, health="Healthy"):
+    return {"DriveLetter": letter, "Label": "", "FileSystem": "NTFS",
+            "Size": size * GB, "SizeRemaining": free * GB, "HealthStatus": health}
+
+
+def analyze(disks=(), volumes=(), admin=True):
+    return StorageCheck().analyze({"Admin": admin, "Disks": list(disks), "Volumes": list(volumes)}, {})
+
+
+def test_healthy_disk_and_volume_are_ok():
+    fs = analyze([disk()], [vol()])
+    assert [f.severity for f in fs] == [Severity.OK, Severity.OK]
+    assert "磨損 2%" in fs[0].title and "40°C" in fs[0].title
+
+
+def test_uncorrected_errors_are_critical_and_say_backup():
+    [f] = analyze([disk(rel={"ReadErrorsUncorrected": 3})])
+    assert f.severity == Severity.CRITICAL and "3 次" in f.title
+    assert "備份" in f.steps[0]
+    assert any("crucial.com" in a.target for a in f.actions)
+
+
+def test_wear_thresholds():
+    assert analyze([disk(rel={"Wear": 79})])[0].severity == Severity.OK
+    assert analyze([disk(rel={"Wear": 85})])[0].severity == Severity.WARNING
+    assert analyze([disk(rel={"Wear": 100})])[0].severity == Severity.CRITICAL
+
+
+def test_temperature_limits_depend_on_disk_type():
+    assert analyze([disk(rel={"Temperature": 72})])[0].severity == Severity.WARNING  # NVMe
+    hdd = disk(MediaType="HDD", BusType="SATA", rel={"Temperature": 62})
+    assert analyze([hdd])[0].severity == Severity.CRITICAL
+
+
+def test_windows_predictive_failure_is_critical():
+    [f] = analyze([disk(OperationalStatus="Predictive Failure")])
+    assert f.severity == Severity.CRITICAL and "即將故障" in f.title
+
+
+def test_no_reliability_without_admin_tells_user_to_accept_uac():
+    [f] = analyze([disk(Reliability=None)], admin=False)
+    assert f.severity == Severity.INFO and "UAC" in f.steps[0]
+
+
+def test_no_reliability_with_admin_mentions_vmd():
+    [f] = analyze([disk(Reliability=None)], admin=True)
+    assert "VMD" in f.cause
+
+
+def test_low_space_thresholds():
+    assert analyze(volumes=[vol(free=4)])[0].severity == Severity.CRITICAL
+    assert analyze(volumes=[vol(free=80)])[0].severity == Severity.WARNING  # 8%
+    assert analyze(volumes=[vol(size=100, free=12)])[0].severity == Severity.WARNING  # < 15 GB
+    assert analyze(volumes=[vol(free=300)])[0].severity == Severity.OK
+
+
+def test_tiny_partitions_ignored_and_dirty_volume_flagged():
+    assert analyze(volumes=[{**vol(), "Size": 500 * 1024**2, "SizeRemaining": 0}]) == []
+    fs = analyze(volumes=[vol(health="Warning")])
+    assert any("修復" in f.title for f in fs)
+
+
+def test_demo_fixture_covers_scenarios():
+    fs = StorageCheck().run(load_fixture("storage")).findings
+    titles = " ".join(f.title for f in fs)
+    for expected in ("無法修復的讀寫錯誤", "額定寫入壽命", "溫度偏高", "空間不足", "需要修復", "健康"):
+        assert expected in titles

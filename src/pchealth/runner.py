@@ -8,6 +8,7 @@ from pathlib import Path
 
 from . import __version__
 from .checks import ALL_CHECKS
+from .elevate import is_admin
 from .model import CheckResult
 
 
@@ -29,18 +30,22 @@ def load_fixture(check_id: str) -> object | None:
 
 def run_all(demo: bool = False) -> dict:
     results: list[CheckResult] = []
+    ctx: dict = {}
     for check in ALL_CHECKS:
+        raw = None
         if demo:
             raw = load_fixture(check.id)
             if raw is None:
                 results.append(CheckResult(check.id, check.title, error="假資料模式：找不到樣本資料"))
                 continue
-            results.append(check.run(raw))
-        else:
-            results.append(check.run())
+        result = check.run(raw, ctx)
+        if result.error is None:
+            ctx.update(check.context(result.raw))
+        results.append(result)
     return {
         "version": __version__,
         "timestamp": datetime.now().isoformat(timespec="seconds"),
         "demo": demo,
+        "admin": is_admin(),
         "results": [r.to_dict() for r in results],
     }
